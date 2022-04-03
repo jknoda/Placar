@@ -71,7 +71,7 @@
             this.lblJikan.AutoSize = true;
             this.lblJikan.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJikan.ForeColor = System.Drawing.Color.Navy;
-            this.lblJikan.Location = new System.Drawing.Point(5, 73);
+            this.lblJikan.Location = new System.Drawing.Point(8, 58);
             this.lblJikan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJikan.Name = "lblJikan";
             this.lblJikan.Size = new System.Drawing.Size(305, 113);
@@ -83,11 +83,11 @@
             this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox1.Controls.Add(this.lblJikan);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 354);
+            this.groupBox1.Location = new System.Drawing.Point(17, 455);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(310, 194);
+            this.groupBox1.Size = new System.Drawing.Size(340, 194);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Jikan";
@@ -102,7 +102,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(310, 208);
+            this.groupBox2.Size = new System.Drawing.Size(340, 208);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Osaekomi";
@@ -110,10 +110,10 @@
             // lblOsaePto
             // 
             this.lblOsaePto.ForeColor = System.Drawing.Color.Maroon;
-            this.lblOsaePto.Location = new System.Drawing.Point(8, 154);
+            this.lblOsaePto.Location = new System.Drawing.Point(17, 154);
             this.lblOsaePto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOsaePto.Name = "lblOsaePto";
-            this.lblOsaePto.Size = new System.Drawing.Size(277, 54);
+            this.lblOsaePto.Size = new System.Drawing.Size(303, 43);
             this.lblOsaePto.TabIndex = 2;
             this.lblOsaePto.Text = "wazari";
             this.lblOsaePto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +124,7 @@
             this.lblOsae.AutoSize = true;
             this.lblOsae.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOsae.ForeColor = System.Drawing.Color.Navy;
-            this.lblOsae.Location = new System.Drawing.Point(69, 57);
+            this.lblOsae.Location = new System.Drawing.Point(81, 58);
             this.lblOsae.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOsae.Name = "lblOsae";
             this.lblOsae.Size = new System.Drawing.Size(162, 113);
@@ -142,16 +142,16 @@
             this.pnl01.Controls.Add(this.lblWName);
             this.pnl01.Controls.Add(this.groupBox4);
             this.pnl01.Controls.Add(this.groupBox3);
-            this.pnl01.Location = new System.Drawing.Point(335, 9);
+            this.pnl01.Location = new System.Drawing.Point(376, 9);
             this.pnl01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl01.Name = "pnl01";
-            this.pnl01.Size = new System.Drawing.Size(990, 427);
+            this.pnl01.Size = new System.Drawing.Size(940, 427);
             this.pnl01.TabIndex = 5;
             // 
             // pnWShido1
             // 
             this.pnWShido1.BackColor = System.Drawing.Color.Yellow;
-            this.pnWShido1.Location = new System.Drawing.Point(661, 112);
+            this.pnWShido1.Location = new System.Drawing.Point(636, 112);
             this.pnWShido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnWShido1.Name = "pnWShido1";
             this.pnWShido1.Size = new System.Drawing.Size(90, 200);
@@ -161,7 +161,7 @@
             // pnWShido2
             // 
             this.pnWShido2.BackColor = System.Drawing.Color.Yellow;
-            this.pnWShido2.Location = new System.Drawing.Point(773, 112);
+            this.pnWShido2.Location = new System.Drawing.Point(739, 112);
             this.pnWShido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnWShido2.Name = "pnWShido2";
             this.pnWShido2.Size = new System.Drawing.Size(90, 200);
@@ -171,7 +171,7 @@
             // pnWShido3
             // 
             this.pnWShido3.BackColor = System.Drawing.Color.Red;
-            this.pnWShido3.Location = new System.Drawing.Point(885, 112);
+            this.pnWShido3.Location = new System.Drawing.Point(842, 112);
             this.pnWShido3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnWShido3.Name = "pnWShido3";
             this.pnWShido3.Size = new System.Drawing.Size(90, 200);
@@ -259,16 +259,16 @@
             this.pnl02.Controls.Add(this.lblBName);
             this.pnl02.Controls.Add(this.groupBox7);
             this.pnl02.Controls.Add(this.groupBox8);
-            this.pnl02.Location = new System.Drawing.Point(335, 455);
+            this.pnl02.Location = new System.Drawing.Point(376, 455);
             this.pnl02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl02.Name = "pnl02";
-            this.pnl02.Size = new System.Drawing.Size(993, 427);
+            this.pnl02.Size = new System.Drawing.Size(940, 427);
             this.pnl02.TabIndex = 6;
             // 
             // pnBShido1
             // 
             this.pnBShido1.BackColor = System.Drawing.Color.Yellow;
-            this.pnBShido1.Location = new System.Drawing.Point(664, 114);
+            this.pnBShido1.Location = new System.Drawing.Point(636, 114);
             this.pnBShido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBShido1.Name = "pnBShido1";
             this.pnBShido1.Size = new System.Drawing.Size(90, 200);
@@ -278,7 +278,7 @@
             // pnBShido3
             // 
             this.pnBShido3.BackColor = System.Drawing.Color.Red;
-            this.pnBShido3.Location = new System.Drawing.Point(888, 114);
+            this.pnBShido3.Location = new System.Drawing.Point(842, 114);
             this.pnBShido3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBShido3.Name = "pnBShido3";
             this.pnBShido3.Size = new System.Drawing.Size(90, 200);
@@ -288,7 +288,7 @@
             // pnBShido2
             // 
             this.pnBShido2.BackColor = System.Drawing.Color.Yellow;
-            this.pnBShido2.Location = new System.Drawing.Point(776, 114);
+            this.pnBShido2.Location = new System.Drawing.Point(739, 114);
             this.pnBShido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBShido2.Name = "pnBShido2";
             this.pnBShido2.Size = new System.Drawing.Size(90, 200);
@@ -374,7 +374,7 @@
             this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox9.Size = new System.Drawing.Size(310, 214);
+            this.groupBox9.Size = new System.Drawing.Size(340, 214);
             this.groupBox9.TabIndex = 7;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Area";
@@ -383,10 +383,10 @@
             // 
             this.lblArea.Font = new System.Drawing.Font("Arial Black", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArea.ForeColor = System.Drawing.Color.Maroon;
-            this.lblArea.Location = new System.Drawing.Point(5, 50);
+            this.lblArea.Location = new System.Drawing.Point(8, 47);
             this.lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(281, 153);
+            this.lblArea.Size = new System.Drawing.Size(324, 153);
             this.lblArea.TabIndex = 2;
             this.lblArea.Text = "00";
             this.lblArea.TextAlign = System.Drawing.ContentAlignment.TopCenter;
