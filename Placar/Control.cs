@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -13,11 +8,11 @@ namespace WindowsFormsApplication1
     {
         frmPlacar formPlacarArb = new frmPlacar();
         frmPlacar formPlacarPub = new frmPlacar();
- 
-        int hJikan = 0, mJikan = 5, sJikan = 0;
-        int ahJikan = 0, amJikan = 5, asJikan = 0;
+
+        int hJikan = 0, mJikan = 4, sJikan = 0;
+        int ahJikan = 0, amJikan = 4, asJikan = 0;
         int hOsae = 0, mOsae = 0, sOsae = 0;
-        
+
         public frmControl()
         {
             InitializeComponent();
@@ -70,13 +65,11 @@ namespace WindowsFormsApplication1
                 txtWName.Text = "WHITE JUDOGI";
                 txtWIppon.Text = "0";
                 txtWWazari.Text = "0";
-                txtWYuko.Text = "0";
                 txtWShido.Text = "0";
 
                 txtBName.Text = "BLUE JUDOGI";
                 txtBIppon.Text = "0";
                 txtBWazari.Text = "0";
-                txtBYuko.Text = "0";
                 txtBShido.Text = "0";
             }
 
@@ -86,7 +79,7 @@ namespace WindowsFormsApplication1
         {
             reset(3);
         }
-        
+
         #region jikan_control
 
         private void btnJikanSet_Click(object sender, EventArgs e)
@@ -98,17 +91,17 @@ namespace WindowsFormsApplication1
             sJikan = Convert.ToInt16(cAux.Substring(3, 2));
             ahJikan = hJikan;
             amJikan = mJikan;
-            asJikan = sJikan; 
+            asJikan = sJikan;
             ShowJikan();
         }
-              
+
         private void timerJikan_Tick(object sender, EventArgs e)
         {
             sJikan--;
             if (sJikan < 0)
             {
                 sJikan = 59;
-                mJikan--; 
+                mJikan--;
             }
             if (mJikan < 0)
             {
@@ -162,8 +155,8 @@ namespace WindowsFormsApplication1
             lblOsaePto.Text = "-----";
             sOsae++;
 
-            if (sOsae >= 25)
-                sOsae = 25;
+            if (sOsae >= 20)
+                sOsae = 20;
 
             if (sOsae == 60)
             {
@@ -175,15 +168,11 @@ namespace WindowsFormsApplication1
                 mOsae = 0;
                 hOsae++;
             }
-            if ((sOsae >= 15) && (sOsae < 20))
-            {
-                lblOsaePto.Text = "YUKO";
-            }
-            if ((sOsae >= 20) && (sOsae < 25))
+            if ((sOsae >= 10) && (sOsae < 19))
             {
                 lblOsaePto.Text = "WAZARI";
             }
-            if (sOsae >= 25)
+            if (sOsae >= 20)
             {
                 lblOsaePto.Text = "IPPON";
                 timerOsae.Stop();
@@ -196,7 +185,7 @@ namespace WindowsFormsApplication1
             btnWOsae.Enabled = false;
             btnBOsae.Enabled = false;
             timerOsae.Start();
-            btnJikanStart_Click(sender, e);            
+            btnJikanStart_Click(sender, e);
         }
 
         private void btnOsaeStop_Click(object sender, EventArgs e)
@@ -210,7 +199,7 @@ namespace WindowsFormsApplication1
                 btnOsaeStart.Enabled = false;
             }
         }
-        
+
         private void btnOsaeReset_Click(object sender, EventArgs e)
         {
             reset(2);
@@ -237,31 +226,21 @@ namespace WindowsFormsApplication1
         private void btnWOsae_Click(object sender, EventArgs e)
         {
             pnOsaePto.Visible = false;
-            if (lblOsaePto.Text == "YUKO")
+            if (lblOsaePto.Text == "WAZARI")
             {
                 if (sender.Equals(btnWOsae))
-                    btnWYP_Click(btnWYP, e);
+                    btnWWP_Click(btnWWP, e);
                 else
-                    btnBYP_Click(btnBYP, e);
+                    btnBWP_Click(btnBWP, e);
             }
             else
             {
-                if (lblOsaePto.Text == "WAZARI")
+                if (lblOsaePto.Text == "IPPON")
                 {
                     if (sender.Equals(btnWOsae))
-                        btnWWP_Click(btnWWP, e);
+                        btnWIP_Click(btnWIP, e);
                     else
-                        btnBWP_Click(btnBWP, e);
-                }
-                else
-                {
-                    if (lblOsaePto.Text == "IPPON")
-                    {
-                        if (sender.Equals(btnWOsae))
-                            btnWIP_Click(btnWIP, e);
-                        else
-                            btnBIP_Click(btnBIP, e);
-                    }
+                        btnBIP_Click(btnBIP, e);
                 }
             }
             reset(2);
@@ -312,92 +291,20 @@ namespace WindowsFormsApplication1
             formPlacarPub.wWazari(txtWWazari.Text);
         }
 
-        private void btnWYP_Click(object sender, EventArgs e)
-        {
-            int nAux;
-            if (sender.Equals(btnWYP))
-                nAux = Convert.ToInt16(txtWYuko.Text) + 1;
-            else
-                nAux = Convert.ToInt16(txtWYuko.Text) - 1;
-            if (nAux < 0) nAux = 0;
-            txtWYuko.Text = nAux.ToString();
-        }
-
-        private void txtWYuko_TextChanged(object sender, EventArgs e)
-        {
-            formPlacarArb.wYuko(txtWYuko.Text);
-            formPlacarPub.wYuko(txtWYuko.Text);
-        }
-
         private void btnWSP_Click(object sender, EventArgs e)
         {
-            int nAux, nAux2;
+            int nAux;
             if (sender.Equals(btnWSP))
             {
                 nAux = Convert.ToInt16(txtWShido.Text) + 1;
-                switch(nAux)
-                {
-                    case 2:
-                    {
-                        nAux2 = Convert.ToInt16(txtBYuko.Text) + 1;
-                        txtBYuko.Text = nAux2.ToString();
-                        break;
-                    }
-                    case 3:
-                    {
-                        nAux2 = Convert.ToInt16(txtBYuko.Text) - 1;
-                        txtBYuko.Text = nAux2.ToString();
-
-                        nAux2 = Convert.ToInt16(txtBWazari.Text) + 1;
-                        txtBWazari.Text = nAux2.ToString();
-                        break;
-
-                    }
-                    case 4:
-                    {
-                        nAux2 = Convert.ToInt16(txtBWazari.Text) - 1;
-                        txtBWazari.Text = nAux2.ToString();
-
-                        nAux2 = Convert.ToInt16(txtBIppon.Text) + 1;
-                        txtBIppon.Text = nAux2.ToString();
-                        break;
-                    }
-                }
 
             }
             else
             {
                 nAux = Convert.ToInt16(txtWShido.Text) - 1;
-                switch(nAux)
-                {
-                    case 3:
-                    {
-                        nAux2 = Convert.ToInt16(txtBIppon.Text) - 1;
-                        txtBIppon.Text = nAux2.ToString();
-
-                        nAux2 = Convert.ToInt16(txtBWazari.Text) + 1;
-                        txtBWazari.Text = nAux2.ToString();
-                        break;
-                    }
-                    case 2:
-                    {
-                        nAux2 = Convert.ToInt16(txtBWazari.Text) - 1;
-                        txtBWazari.Text = nAux2.ToString();
-
-                        nAux2 = Convert.ToInt16(txtBYuko.Text) + 1;
-                        txtBYuko.Text = nAux2.ToString();
-                        break;
-                    }
-                    case 1:
-                    {
-                        nAux2 = Convert.ToInt16(txtBYuko.Text) - 1;
-                        txtBYuko.Text = nAux2.ToString();
-                        break;
-                    }
-                }
             }
             if (nAux < 0) nAux = 0;
-            if (nAux > 4) nAux = 4;
+            if (nAux > 3) nAux = 3;
             txtWShido.Text = nAux.ToString();
         }
 
@@ -462,91 +369,19 @@ namespace WindowsFormsApplication1
             formPlacarPub.bWazari(txtBWazari.Text);
         }
 
-        private void btnBYP_Click(object sender, EventArgs e)
-        {
-            int nAux;
-            if (sender.Equals(btnBYP))
-                nAux = Convert.ToInt16(txtBYuko.Text) + 1;
-            else
-                nAux = Convert.ToInt16(txtBYuko.Text) - 1;
-            if (nAux < 0) nAux = 0;
-            txtBYuko.Text = nAux.ToString();
-        }
-
-        private void txtBYuko_TextChanged(object sender, EventArgs e)
-        {
-            formPlacarArb.bYuko(txtBYuko.Text);
-            formPlacarPub.bYuko(txtBYuko.Text);
-        }
-
         private void btnBSP_Click(object sender, EventArgs e)
         {
-            int nAux, nAux2;
+            int nAux;
             if (sender.Equals(btnBSP))
             {
                 nAux = Convert.ToInt16(txtBShido.Text) + 1;
-                switch (nAux)
-                {
-                    case 2:
-                        {
-                            nAux2 = Convert.ToInt16(txtWYuko.Text) + 1;
-                            txtWYuko.Text = nAux2.ToString();
-                            break;
-                        }
-                    case 3:
-                        {
-                            nAux2 = Convert.ToInt16(txtWYuko.Text) - 1;
-                            txtWYuko.Text = nAux2.ToString();
-
-                            nAux2 = Convert.ToInt16(txtWWazari.Text) + 1;
-                            txtWWazari.Text = nAux2.ToString();
-                            break;
-
-                        }
-                    case 4:
-                        {
-                            nAux2 = Convert.ToInt16(txtWWazari.Text) - 1;
-                            txtWWazari.Text = nAux2.ToString();
-
-                            nAux2 = Convert.ToInt16(txtWIppon.Text) + 1;
-                            txtWIppon.Text = nAux2.ToString();
-                            break;
-                        }
-                }
             }
             else
             {
                 nAux = Convert.ToInt16(txtBShido.Text) - 1;
-                switch (nAux)
-                {
-                    case 3:
-                        {
-                            nAux2 = Convert.ToInt16(txtWIppon.Text) - 1;
-                            txtWIppon.Text = nAux2.ToString();
-
-                            nAux2 = Convert.ToInt16(txtWWazari.Text) + 1;
-                            txtWWazari.Text = nAux2.ToString();
-                            break;
-                        }
-                    case 2:
-                        {
-                            nAux2 = Convert.ToInt16(txtWWazari.Text) - 1;
-                            txtWWazari.Text = nAux2.ToString();
-
-                            nAux2 = Convert.ToInt16(txtWYuko.Text) + 1;
-                            txtWYuko.Text = nAux2.ToString();
-                            break;
-                        }
-                    case 1:
-                        {
-                            nAux2 = Convert.ToInt16(txtWYuko.Text) - 1;
-                            txtWYuko.Text = nAux2.ToString();
-                            break;
-                        }
-                }
             }
             if (nAux < 0) nAux = 0;
-            if (nAux > 4) nAux = 4;
+            if (nAux > 3) nAux = 3;
             txtBShido.Text = nAux.ToString();
         }
 
@@ -576,6 +411,6 @@ namespace WindowsFormsApplication1
             formPlacarArb.Close();
             formPlacarPub.Close();
         }
-         
+
     }
 }

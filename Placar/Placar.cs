@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -37,15 +32,6 @@ namespace WindowsFormsApplication1
         {
             lblWWazari.Text = cText;
         }
-        public void wYuko(string cText)
-        {
-            lblWYuko.Text = cText;
-            if (Convert.ToInt16(cText) >= 10)
-                lblWYuko.Font = new Font(lblWYuko.Font.FontFamily, 80);
-            else
-                lblWYuko.Font = new Font(lblWYuko.Font.FontFamily, 100);
-
-        }
         public void wShido(string cText)
         {
             int nAux;
@@ -54,7 +40,6 @@ namespace WindowsFormsApplication1
             pnWShido1.Visible = false;
             pnWShido2.Visible = false;
             pnWShido3.Visible = false;
-            pnWShido4.Visible = false;
             switch (nAux)
             {
                 case 1:
@@ -64,20 +49,17 @@ namespace WindowsFormsApplication1
                     }
                 case 2:
                     {
+                        pnWShido1.Visible = true;
                         pnWShido2.Visible = true;
                         break;
                     }
                 case 3:
                     {
+                        pnWShido1.Visible = true;
+                        pnWShido2.Visible = true;
                         pnWShido3.Visible = true;
                         break;
                     }
-                case 4:
-                    {
-                        pnWShido4.Visible = true;
-                        break;
-                    }
-
             }
         }
 
@@ -89,14 +71,6 @@ namespace WindowsFormsApplication1
         {
             lblBWazari.Text = cText;
         }
-        public void bYuko(string cText)
-        {
-            lblBYuko.Text = cText;
-            if (Convert.ToInt16(cText) >= 10)
-                lblBYuko.Font = new Font(lblBYuko.Font.FontFamily, 80);
-            else
-                lblBYuko.Font = new Font(lblBYuko.Font.FontFamily, 100);
-        }
         public void bShido(string cText)
         {
             int nAux;
@@ -105,7 +79,6 @@ namespace WindowsFormsApplication1
             pnBShido1.Visible = false;
             pnBShido2.Visible = false;
             pnBShido3.Visible = false;
-            pnBShido4.Visible = false;
             switch (nAux)
             {
                 case 1:
@@ -115,20 +88,17 @@ namespace WindowsFormsApplication1
                     }
                 case 2:
                     {
+                        pnBShido1.Visible = true;
                         pnBShido2.Visible = true;
                         break;
                     }
                 case 3:
                     {
+                        pnBShido1.Visible = true;
+                        pnBShido2.Visible = true;
                         pnBShido3.Visible = true;
                         break;
                     }
-                case 4:
-                    {
-                        pnBShido4.Visible = true;
-                        break;
-                    }
-
             }
         }
 
