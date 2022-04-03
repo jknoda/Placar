@@ -124,6 +124,9 @@ namespace WindowsFormsApplication1
         private void btnJikanStart_Click(object sender, EventArgs e)
         {
             timerJikan.Start();
+            if (pnOsaePto.Visible)
+                timerOsae.Start();
+
         }
 
         private void btnJikanStop_Click(object sender, EventArgs e)
