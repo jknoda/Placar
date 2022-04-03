@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1
         public frmPlacar()
         {
             InitializeComponent();
-            
+
         }
 
         public void placarColor(Color color01, Color color02)
@@ -130,6 +130,19 @@ namespace WindowsFormsApplication1
                 lblOsaePto.Visible = true;
             lblOsaePto.Text = cText;
         }
-       
+
+        private void pnl01_Resize(object sender, EventArgs e)
+        {
+            pnWhite.Location = new Point(                
+                this.pnl01.Width / 2 - pnWhite.Size.Width / 2,
+                106);
+        }
+
+        private void pnl02_Resize(object sender, EventArgs e)
+        {
+            pnBlue.Location = new Point(
+                this.pnl02.Width / 2 - pnBlue.Size.Width / 2,
+                106);
+        }
     }
 }
