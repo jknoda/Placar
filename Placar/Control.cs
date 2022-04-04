@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -12,56 +13,54 @@ namespace WindowsFormsApplication1
         int hJikan = 0, mJikan = 4, sJikan = 0;
         int ahJikan = 0, amJikan = 4, asJikan = 0;
         int hOsae = 0, mOsae = 0, sOsae = 0;
+        bool GS = false, wAwasete = false, bAwasete = false;
+
+        SoundPlayer sinalSound = new SoundPlayer(@"..\..\Assets\gong.wav");
 
         public frmControl()
         {
             InitializeComponent();
         }
-
         private void frmStarter_Load(object sender, EventArgs e)
         {
             formPlacarPub.Show();
+            grb01.BackColor = Color.White;
+            grb02.BackColor = Color.MediumBlue;
             reset(3);
         }
-
+        private void btnGS_Click(object sender, EventArgs e)
+        {
+            GS = !GS;
+            formPlacarArb.GS();
+            formPlacarPub.GS();
+        }
         private void txtArea_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.area(txtArea.Text);
-            formPlacarPub.area(txtArea.Text);
+            formPlacarArb.Texto(txtArea.Text);
+            formPlacarPub.Texto(txtArea.Text);
+        }
+        private void Sinal()
+        {
+            timerJikan.Stop();
+            timerOsae.Stop();
+            sinalSound.Play();
+        }
+        private void frmControl_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formPlacarArb.Close();
+            formPlacarPub.Close();
         }
 
+        #region reset
         private void reset(int nTipo)
         {
-            // 1=reset jikan
-            if ((nTipo == 1) || (nTipo == 3))
-            {
-                timerJikan.Stop();
-                hJikan = ahJikan;
-                mJikan = amJikan;
-                sJikan = asJikan;
-                ShowJikan();
-            }
-            // 2=reset osaekomi
-            if ((nTipo == 2) || (nTipo == 3))
-            {
-                btnOsaeStart.Enabled = true;
-                pnPto.BackColor = Color.White;
-                pnOsaePto.Visible = false;
-                btnWOsae.Enabled = false;
-                btnBOsae.Enabled = false;
-                pnPto.BackColor = Color.White;
-                timerOsae.Stop();
-                lblOsaePto.Text = "NONE";
-                hOsae = 0;
-                mOsae = 0;
-                sOsae = 0;
-                ShowOsae();
-            }
+            // para preservar o tempo atual, caso precise voltar o cronometro
+            mtxtJikan.Text = mJikan.ToString("00") + ":" + sJikan.ToString("00");
+            mtxtJikan.Focus();
+
             // 3=reset placar
             if (nTipo == 3)
             {
-                mtxtJikan.Text = mJikan.ToString("00") + ":" + sJikan.ToString("00");
-                mtxtJikan.Focus();
                 txtWName.Text = "WHITE JUDOGI";
                 txtWIppon.Text = "0";
                 txtWWazari.Text = "0";
@@ -71,14 +70,68 @@ namespace WindowsFormsApplication1
                 txtBIppon.Text = "0";
                 txtBWazari.Text = "0";
                 txtBShido.Text = "0";
+
+                txtArea.Text = "";
+
+                if (GS)
+                {
+                    GS = !GS;
+                    formPlacarArb.GS();
+                    formPlacarPub.GS();
+                }
+                wAwasete = false;
+                bAwasete = false;
             }
 
+            // 1=reset jikan
+            if ((nTipo == 1) || (nTipo == 3))
+            {
+                timerJikan.Stop();
+                formPlacarArb.JikanColor(Color.White);
+                formPlacarPub.JikanColor(Color.White);
+                if (GS)
+                {
+                    hJikan = 0;
+                    mJikan = 0;
+                    sJikan = 0;
+                }
+                else
+                {
+                    hJikan = ahJikan;
+                    mJikan = amJikan;
+                    sJikan = asJikan;
+                }
+                ShowJikan();
+            }
+            // 2=reset osaekomi
+            if ((nTipo == 2) || (nTipo == 3))
+            {
+                btnBOsaekomi.Enabled = true;
+                btnBToketa.Enabled = true;
+
+                btnWOsaekomi.Enabled = true;
+                btnWToketa.Enabled = true;
+
+                //btnOsaeStart.Enabled = true;
+                //pnPto.BackColor = Color.White;
+                pnOsaePto.Visible = false;
+                //btnWOsae.Enabled = false;
+                //btnBOsae.Enabled = false;
+                //pnPto.BackColor = Color.White;
+                timerOsae.Stop();
+                lblOsaePto.Text = "----------";
+                hOsae = 0;
+                mOsae = 0;
+                sOsae = 0;
+                ShowOsae();
+            }
         }
 
         private void btnResetAll_Click(object sender, EventArgs e)
         {
             reset(3);
         }
+        #endregion reset
 
         #region jikan_control
 
@@ -97,26 +150,44 @@ namespace WindowsFormsApplication1
 
         private void timerJikan_Tick(object sender, EventArgs e)
         {
-            sJikan--;
-            if (sJikan < 0)
+            if (GS)
             {
-                sJikan = 59;
-                mJikan--;
-            }
-            if (mJikan < 0)
-            {
-                mJikan = 59;
-                hJikan--;
-            }
-            if (((sJikan == 0) && (mJikan == 0) && (hJikan == 0)) || (mJikan == 59))
-            {
-                if (mJikan == 59)
+                sJikan++;
+                if (sJikan > 59)
                 {
-                    sJikan = 0;
-                    mJikan = 0;
-                    sJikan = 0;
+                    sJikan = 00;
+                    mJikan++;
                 }
-                timerJikan.Stop();
+                if (mJikan > 59)
+                {
+                    mJikan = 0;
+                    hJikan++;
+                }
+            }
+            else
+            {
+                sJikan--;
+                if (sJikan < 0)
+                {
+                    sJikan = 59;
+                    mJikan--;
+                }
+                if (mJikan < 0)
+                {
+                    mJikan = 59;
+                    hJikan--;
+                }
+                if (((sJikan == 0) && (mJikan == 0) && (hJikan == 0)) || (mJikan == 59))
+                {
+                    if (mJikan == 59)
+                    {
+                        sJikan = 0;
+                        mJikan = 0;
+                        sJikan = 0;
+                    }
+                    timerJikan.Stop();
+                    Sinal();
+                }
             }
             ShowJikan();
         }
@@ -126,13 +197,16 @@ namespace WindowsFormsApplication1
             timerJikan.Start();
             if (pnOsaePto.Visible)
                 timerOsae.Start();
-
+            formPlacarArb.JikanColor(Color.White);
+            formPlacarPub.JikanColor(Color.White);
         }
 
         private void btnJikanStop_Click(object sender, EventArgs e)
         {
             timerJikan.Stop();
             btnOsaeStop_Click(sender, e);
+            formPlacarArb.JikanColor(Color.Red);
+            formPlacarPub.JikanColor(Color.Red);
         }
         private void btnJikanReset_Click(object sender, EventArgs e)
         {
@@ -154,8 +228,8 @@ namespace WindowsFormsApplication1
         #region osae_control
         private void timerOsae_Tick(object sender, EventArgs e)
         {
+            bool ippon = false;
             pnOsaePto.Visible = true;
-            lblOsaePto.Text = "-----";
             sOsae++;
 
             if (sOsae >= 20)
@@ -171,22 +245,53 @@ namespace WindowsFormsApplication1
                 mOsae = 0;
                 hOsae++;
             }
-            if ((sOsae >= 10) && (sOsae < 19))
+            if (sOsae >= 10 && sOsae <= 19 && lblOsaePto.Text == "----------")
             {
+                if (txtWWazari.Text == "1")
+                    ippon = true;
                 lblOsaePto.Text = "WAZARI";
+                if (btnWToketa.Enabled)
+                    WhiteWazari(true);
+                else
+                    BlueWazari(true);
             }
-            if (sOsae >= 20)
+            if (sOsae > 19 && lblOsaePto.Text == "WAZARI")
             {
+                ippon = true;
                 lblOsaePto.Text = "IPPON";
+                if (btnWToketa.Enabled)
+                {
+                    WhiteWazari(false);
+                    WhiteIppon(true);
+                }
+                else
+                {
+                    BlueWazari(false);
+                    BlueIppon(true);
+                }
+            }
+            if (ippon)
+            {
                 timerOsae.Stop();
+                Sinal();
             }
             ShowOsae();
         }
         private void btnOsaeStart_Click(object sender, EventArgs e)
         {
             pnOsaePto.Visible = true;
-            btnWOsae.Enabled = false;
-            btnBOsae.Enabled = false;
+            if (sender == btnBOsaekomi)
+            {
+                btnWOsaekomi.Enabled = false;
+                btnWToketa.Enabled = false;
+            }
+            else
+            {
+                btnBOsaekomi.Enabled = false;
+                btnBToketa.Enabled = false;
+            }
+            //btnWOsae.Enabled = false;
+            //btnBOsae.Enabled = false;
             timerOsae.Start();
             btnJikanStart_Click(sender, e);
         }
@@ -196,10 +301,12 @@ namespace WindowsFormsApplication1
             if (Convert.ToInt16(lblOsae.Text) > 0)
             {
                 timerOsae.Stop();
-                btnWOsae.Enabled = true;
-                btnBOsae.Enabled = true;
-                pnPto.BackColor = Color.Red;
-                btnOsaeStart.Enabled = false;
+                //btnWOsae.Enabled = true;
+                //btnBOsae.Enabled = true;
+                //pnPto.BackColor = Color.Red;
+                //btnOsaeStart.Enabled = false;
+                btnWOsaekomi.Enabled = false;
+                btnBOsaekomi.Enabled = false;
             }
         }
 
@@ -219,36 +326,31 @@ namespace WindowsFormsApplication1
             formPlacarPub.Osae(lblOsae.Text);
         }
 
-
-        private void lblOsaePto_TextChanged(object sender, EventArgs e)
-        {
-            formPlacarArb.OsaePto(lblOsaePto.Text);
-            formPlacarPub.OsaePto(lblOsaePto.Text);
-        }
-
-        private void btnWOsae_Click(object sender, EventArgs e)
-        {
-            pnOsaePto.Visible = false;
-            if (lblOsaePto.Text == "WAZARI")
-            {
-                if (sender.Equals(btnWOsae))
-                    btnWWP_Click(btnWWP, e);
-                else
-                    btnBWP_Click(btnBWP, e);
-            }
-            else
-            {
-                if (lblOsaePto.Text == "IPPON")
-                {
-                    if (sender.Equals(btnWOsae))
-                        btnWIP_Click(btnWIP, e);
-                    else
-                        btnBIP_Click(btnBIP, e);
-                }
-            }
-            reset(2);
-            btnOsaeStart.Enabled = true;
-        }
+        //private void btnWOsae_Click(object sender, EventArgs e)
+        //{
+        //    pnOsaePto.Visible = false;
+        //    //if (lblOsaePto.Text == "WAZARI")
+        //    //{
+        //    //    if (sender.Equals(btnWOsae))
+        //    //        btnWWP_Click(btnWWP, e);
+        //    //    else
+        //    //        btnBWP_Click(btnBWP, e);
+        //    //}
+        //    //else
+        //    //{
+        //    //    if (lblOsaePto.Text == "IPPON")
+        //    //    {
+        //    //        if (sender.Equals(btnWOsae))
+        //    //            btnWIP_Click(btnWIP, e);
+        //    //        else
+        //    //            btnBIP_Click(btnBIP, e);
+        //    //    }
+        //    //}
+        //    reset(2);
+        //    //btnOsaeStart.Enabled = true;
+        //    btnWOsaekomi.Enabled = true;
+        //    btnBOsaekomi.Enabled = true;
+        //}
         #endregion
 
         #region  white_control
@@ -260,16 +362,29 @@ namespace WindowsFormsApplication1
 
         private void btnWIP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            bool plus = false;
             if (sender.Equals(btnWIP))
+                plus = true;
+            WhiteIppon(plus);
+        }
+        private void WhiteIppon(bool plus)
+        {
+            int nAux;
+            if (plus)
                 nAux = Convert.ToInt16(txtWIppon.Text) + 1;
             else
+            {
+                if (wAwasete)
+                {
+                    wAwasete = false;
+                    WhiteWazari(true);
+                }
                 nAux = Convert.ToInt16(txtWIppon.Text) - 1;
+            }
             if (nAux < 0) nAux = 0;
             if (nAux > 1) nAux = 1;
             txtWIppon.Text = nAux.ToString();
         }
-
         private void txtWIppon_TextChanged(object sender, EventArgs e)
         {
             formPlacarArb.wIppon(txtWIppon.Text);
@@ -278,16 +393,36 @@ namespace WindowsFormsApplication1
 
         private void btnWWP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            bool plus = false;
             if (sender.Equals(btnWWP))
+                plus = true;
+            WhiteWazari(plus);
+        }
+        private void WhiteWazari(bool plus)
+        {
+            int nAux;
+            if (plus)
                 nAux = Convert.ToInt16(txtWWazari.Text) + 1;
             else
+            {
                 nAux = Convert.ToInt16(txtWWazari.Text) - 1;
+                if (wAwasete)
+                {
+                    wAwasete = false;
+                    WhiteIppon(false);
+                    nAux = 1;
+                }
+            }
             if (nAux > 2) nAux = 2;
             if (nAux < 0) nAux = 0;
+            if (nAux == 2 || wAwasete)
+            {
+                nAux = 0;
+                wAwasete = true;
+                WhiteIppon(true);
+            }
             txtWWazari.Text = nAux.ToString();
         }
-
         private void txtWWazari_TextChanged(object sender, EventArgs e)
         {
             formPlacarArb.wWazari(txtWWazari.Text);
@@ -322,7 +457,7 @@ namespace WindowsFormsApplication1
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 grb01.BackColor = colorDlg.Color;
-                btnWOsae.BackColor = colorDlg.Color;
+                //btnWOsae.BackColor = colorDlg.Color;
                 formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
                 formPlacarPub.placarColor(grb01.BackColor, grb02.BackColor);
             }
@@ -339,30 +474,67 @@ namespace WindowsFormsApplication1
 
         private void btnBIP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            bool plus = false;
             if (sender.Equals(btnBIP))
+                plus = true;
+            BlueIppon(plus);
+        }
+
+        private void BlueIppon(bool plus)
+        {
+            int nAux;
+            if (plus)
                 nAux = Convert.ToInt16(txtBIppon.Text) + 1;
             else
+            {
+                if (bAwasete)
+                {
+                    bAwasete = false;
+                    BlueWazari(true);
+                }
                 nAux = Convert.ToInt16(txtBIppon.Text) - 1;
+            }
             if (nAux < 0) nAux = 0;
             if (nAux > 1) nAux = 1;
             txtBIppon.Text = nAux.ToString();
         }
+
         private void txtBIppon_TextChanged(object sender, EventArgs e)
         {
             formPlacarArb.bIppon(txtBIppon.Text);
             formPlacarPub.bIppon(txtBIppon.Text);
         }
-
         private void btnBWP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            bool plus = false;
             if (sender.Equals(btnBWP))
+                plus = true;
+            BlueWazari(plus);
+        }
+
+        private void BlueWazari(bool plus)
+        {
+            int nAux;
+            if (plus)
                 nAux = Convert.ToInt16(txtBWazari.Text) + 1;
             else
+            {
                 nAux = Convert.ToInt16(txtBWazari.Text) - 1;
-            if (nAux < 0) nAux = 0;
+                if (bAwasete)
+                {
+                    bAwasete = false;
+                    BlueIppon(false);
+                    nAux = 1;
+                }
+            }
             if (nAux > 2) nAux = 2;
+            if (nAux < 0) nAux = 0;
+            if (nAux == 2 || bAwasete)
+            {
+                nAux = 0;
+                bAwasete = true;
+                BlueIppon(true);
+            }
             txtBWazari.Text = nAux.ToString();
         }
 
@@ -371,7 +543,6 @@ namespace WindowsFormsApplication1
             formPlacarArb.bWazari(txtBWazari.Text);
             formPlacarPub.bWazari(txtBWazari.Text);
         }
-
         private void btnBSP_Click(object sender, EventArgs e)
         {
             int nAux;
@@ -387,7 +558,6 @@ namespace WindowsFormsApplication1
             if (nAux > 3) nAux = 3;
             txtBShido.Text = nAux.ToString();
         }
-
         private void txtBShido_TextChanged(object sender, EventArgs e)
         {
             formPlacarArb.bShido(txtBShido.Text);
@@ -400,7 +570,7 @@ namespace WindowsFormsApplication1
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 grb02.BackColor = colorDlg.Color;
-                btnBOsae.BackColor = colorDlg.Color;
+                //btnBOsae.BackColor = colorDlg.Color;
                 formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
                 formPlacarPub.placarColor(grb01.BackColor, grb02.BackColor);
 
@@ -408,12 +578,5 @@ namespace WindowsFormsApplication1
 
         }
         #endregion
-
-        private void frmControl_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formPlacarArb.Close();
-            formPlacarPub.Close();
-        }
-
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGS = new System.Windows.Forms.Button();
             this.btnJikanSet = new System.Windows.Forms.Button();
             this.lblJikan = new System.Windows.Forms.Label();
             this.btnJikanReset = new System.Windows.Forms.Button();
@@ -39,14 +40,7 @@
             this.mtxtJikan = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pnOsaePto = new System.Windows.Forms.Panel();
-            this.pnPto = new System.Windows.Forms.Panel();
-            this.btnWOsae = new System.Windows.Forms.Button();
-            this.btnBOsae = new System.Windows.Forms.Button();
-            this.lblOsaePto = new System.Windows.Forms.Label();
             this.btnOsaeReset = new System.Windows.Forms.Button();
-            this.btnOsaeStop = new System.Windows.Forms.Button();
-            this.btnOsaeStart = new System.Windows.Forms.Button();
             this.lblOsae = new System.Windows.Forms.Label();
             this.grb01 = new System.Windows.Forms.GroupBox();
             this.btnColor01 = new System.Windows.Forms.Button();
@@ -75,7 +69,7 @@
             this.btnBSP = new System.Windows.Forms.Button();
             this.txtBShido = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnBWM = new System.Windows.Forms.Button();
             this.btnBWP = new System.Windows.Forms.Button();
             this.txtBWazari = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -85,10 +79,16 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.txtArea = new System.Windows.Forms.TextBox();
+            this.gbWOsaekomi = new System.Windows.Forms.GroupBox();
+            this.gbBOsaekomi = new System.Windows.Forms.GroupBox();
+            this.btnBToketa = new System.Windows.Forms.Button();
+            this.btnBOsaekomi = new System.Windows.Forms.Button();
+            this.btnWToketa = new System.Windows.Forms.Button();
+            this.btnWOsaekomi = new System.Windows.Forms.Button();
+            this.pnOsaePto = new System.Windows.Forms.Panel();
+            this.lblOsaePto = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.pnOsaePto.SuspendLayout();
-            this.pnPto.SuspendLayout();
             this.grb01.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -98,10 +98,14 @@
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.gbWOsaekomi.SuspendLayout();
+            this.gbBOsaekomi.SuspendLayout();
+            this.pnOsaePto.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnGS);
             this.groupBox1.Controls.Add(this.btnJikanSet);
             this.groupBox1.Controls.Add(this.lblJikan);
             this.groupBox1.Controls.Add(this.btnJikanReset);
@@ -112,18 +116,31 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(323, 187);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Jikan";
             // 
+            // btnGS
+            // 
+            this.btnGS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGS.Location = new System.Drawing.Point(196, 106);
+            this.btnGS.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGS.Name = "btnGS";
+            this.btnGS.Size = new System.Drawing.Size(55, 70);
+            this.btnGS.TabIndex = 7;
+            this.btnGS.TabStop = false;
+            this.btnGS.Text = "GS";
+            this.btnGS.UseVisualStyleBackColor = true;
+            this.btnGS.Click += new System.EventHandler(this.btnGS_Click);
+            // 
             // btnJikanSet
             // 
             this.btnJikanSet.Location = new System.Drawing.Point(160, 27);
-            this.btnJikanSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJikanSet.Margin = new System.Windows.Forms.Padding(4);
             this.btnJikanSet.Name = "btnJikanSet";
             this.btnJikanSet.Size = new System.Drawing.Size(64, 28);
             this.btnJikanSet.TabIndex = 1;
@@ -145,23 +162,25 @@
             // 
             // btnJikanReset
             // 
-            this.btnJikanReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJikanReset.Location = new System.Drawing.Point(251, 106);
-            this.btnJikanReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJikanReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnJikanReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJikanReset.Location = new System.Drawing.Point(254, 106);
+            this.btnJikanReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnJikanReset.Name = "btnJikanReset";
-            this.btnJikanReset.Size = new System.Drawing.Size(64, 70);
+            this.btnJikanReset.Size = new System.Drawing.Size(61, 70);
             this.btnJikanReset.TabIndex = 5;
             this.btnJikanReset.TabStop = false;
             this.btnJikanReset.Text = "Reset";
-            this.btnJikanReset.UseVisualStyleBackColor = true;
+            this.btnJikanReset.UseVisualStyleBackColor = false;
             this.btnJikanReset.Click += new System.EventHandler(this.btnJikanReset_Click);
             // 
             // btnJikanStop
             // 
-            this.btnJikanStop.Location = new System.Drawing.Point(116, 106);
-            this.btnJikanStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJikanStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJikanStop.Location = new System.Drawing.Point(86, 106);
+            this.btnJikanStop.Margin = new System.Windows.Forms.Padding(4);
             this.btnJikanStop.Name = "btnJikanStop";
-            this.btnJikanStop.Size = new System.Drawing.Size(127, 70);
+            this.btnJikanStop.Size = new System.Drawing.Size(110, 70);
             this.btnJikanStop.TabIndex = 4;
             this.btnJikanStop.TabStop = false;
             this.btnJikanStop.Text = "Matte\r\nSonomama\r\n";
@@ -170,10 +189,11 @@
             // 
             // btnJikanStart
             // 
+            this.btnJikanStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJikanStart.Location = new System.Drawing.Point(8, 106);
-            this.btnJikanStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJikanStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnJikanStart.Name = "btnJikanStart";
-            this.btnJikanStart.Size = new System.Drawing.Size(100, 70);
+            this.btnJikanStart.Size = new System.Drawing.Size(75, 70);
             this.btnJikanStart.TabIndex = 3;
             this.btnJikanStart.TabStop = false;
             this.btnJikanStart.Text = "Hajime";
@@ -194,7 +214,7 @@
             // mtxtJikan
             // 
             this.mtxtJikan.Location = new System.Drawing.Point(100, 31);
-            this.mtxtJikan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtxtJikan.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtJikan.Mask = "99:99";
             this.mtxtJikan.Name = "mtxtJikan";
             this.mtxtJikan.Size = new System.Drawing.Size(51, 26);
@@ -214,123 +234,39 @@
             // 
             this.groupBox2.Controls.Add(this.pnOsaePto);
             this.groupBox2.Controls.Add(this.btnOsaeReset);
-            this.groupBox2.Controls.Add(this.btnOsaeStop);
-            this.groupBox2.Controls.Add(this.btnOsaeStart);
             this.groupBox2.Controls.Add(this.lblOsae);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 320);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(674, 192);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(323, 187);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(235, 138);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Osaekomi";
             // 
-            // pnOsaePto
-            // 
-            this.pnOsaePto.Controls.Add(this.pnPto);
-            this.pnOsaePto.Controls.Add(this.lblOsaePto);
-            this.pnOsaePto.Location = new System.Drawing.Point(100, 20);
-            this.pnOsaePto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnOsaePto.Name = "pnOsaePto";
-            this.pnOsaePto.Size = new System.Drawing.Size(215, 74);
-            this.pnOsaePto.TabIndex = 6;
-            this.pnOsaePto.Visible = false;
-            // 
-            // pnPto
-            // 
-            this.pnPto.BackColor = System.Drawing.Color.Red;
-            this.pnPto.Controls.Add(this.btnWOsae);
-            this.pnPto.Controls.Add(this.btnBOsae);
-            this.pnPto.Location = new System.Drawing.Point(96, 1);
-            this.pnPto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnPto.Name = "pnPto";
-            this.pnPto.Size = new System.Drawing.Size(108, 71);
-            this.pnPto.TabIndex = 8;
-            // 
-            // btnWOsae
-            // 
-            this.btnWOsae.BackColor = System.Drawing.Color.White;
-            this.btnWOsae.Location = new System.Drawing.Point(17, 4);
-            this.btnWOsae.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnWOsae.Name = "btnWOsae";
-            this.btnWOsae.Size = new System.Drawing.Size(83, 27);
-            this.btnWOsae.TabIndex = 6;
-            this.btnWOsae.TabStop = false;
-            this.btnWOsae.Text = "01";
-            this.btnWOsae.UseVisualStyleBackColor = false;
-            this.btnWOsae.Click += new System.EventHandler(this.btnWOsae_Click);
-            // 
-            // btnBOsae
-            // 
-            this.btnBOsae.BackColor = System.Drawing.Color.LightBlue;
-            this.btnBOsae.Location = new System.Drawing.Point(17, 39);
-            this.btnBOsae.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnBOsae.Name = "btnBOsae";
-            this.btnBOsae.Size = new System.Drawing.Size(83, 27);
-            this.btnBOsae.TabIndex = 7;
-            this.btnBOsae.TabStop = false;
-            this.btnBOsae.Text = "02";
-            this.btnBOsae.UseVisualStyleBackColor = false;
-            this.btnBOsae.Click += new System.EventHandler(this.btnWOsae_Click);
-            // 
-            // lblOsaePto
-            // 
-            this.lblOsaePto.AutoSize = true;
-            this.lblOsaePto.Location = new System.Drawing.Point(8, 30);
-            this.lblOsaePto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblOsaePto.Name = "lblOsaePto";
-            this.lblOsaePto.Size = new System.Drawing.Size(44, 20);
-            this.lblOsaePto.TabIndex = 0;
-            this.lblOsaePto.Text = "--X--";
-            this.lblOsaePto.TextChanged += new System.EventHandler(this.lblOsaePto_TextChanged);
-            // 
             // btnOsaeReset
             // 
-            this.btnOsaeReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOsaeReset.Location = new System.Drawing.Point(251, 108);
-            this.btnOsaeReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOsaeReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOsaeReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOsaeReset.Location = new System.Drawing.Point(147, 18);
+            this.btnOsaeReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnOsaeReset.Name = "btnOsaeReset";
-            this.btnOsaeReset.Size = new System.Drawing.Size(64, 68);
+            this.btnOsaeReset.Size = new System.Drawing.Size(64, 56);
             this.btnOsaeReset.TabIndex = 5;
             this.btnOsaeReset.TabStop = false;
             this.btnOsaeReset.Text = "Reset";
-            this.btnOsaeReset.UseVisualStyleBackColor = true;
+            this.btnOsaeReset.UseVisualStyleBackColor = false;
             this.btnOsaeReset.Click += new System.EventHandler(this.btnOsaeReset_Click);
-            // 
-            // btnOsaeStop
-            // 
-            this.btnOsaeStop.Location = new System.Drawing.Point(121, 108);
-            this.btnOsaeStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnOsaeStop.Name = "btnOsaeStop";
-            this.btnOsaeStop.Size = new System.Drawing.Size(79, 68);
-            this.btnOsaeStop.TabIndex = 4;
-            this.btnOsaeStop.TabStop = false;
-            this.btnOsaeStop.Text = "Toketa";
-            this.btnOsaeStop.UseVisualStyleBackColor = true;
-            this.btnOsaeStop.Click += new System.EventHandler(this.btnOsaeStop_Click);
-            // 
-            // btnOsaeStart
-            // 
-            this.btnOsaeStart.Location = new System.Drawing.Point(8, 108);
-            this.btnOsaeStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnOsaeStart.Name = "btnOsaeStart";
-            this.btnOsaeStart.Size = new System.Drawing.Size(105, 68);
-            this.btnOsaeStart.TabIndex = 3;
-            this.btnOsaeStart.TabStop = false;
-            this.btnOsaeStart.Text = "Osaekomi\r\nYoshi\r\n";
-            this.btnOsaeStart.UseVisualStyleBackColor = true;
-            this.btnOsaeStart.Click += new System.EventHandler(this.btnOsaeStart_Click);
             // 
             // lblOsae
             // 
             this.lblOsae.AutoSize = true;
-            this.lblOsae.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOsae.Location = new System.Drawing.Point(20, 36);
+            this.lblOsae.Font = new System.Drawing.Font("Arial Black", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOsae.Location = new System.Drawing.Point(30, 23);
             this.lblOsae.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOsae.Name = "lblOsae";
-            this.lblOsae.Size = new System.Drawing.Size(58, 42);
+            this.lblOsae.Size = new System.Drawing.Size(73, 52);
             this.lblOsae.TabIndex = 2;
             this.lblOsae.Text = "00";
             this.lblOsae.TextChanged += new System.EventHandler(this.lblOsae_TextChanged);
@@ -338,6 +274,7 @@
             // grb01
             // 
             this.grb01.BackColor = System.Drawing.Color.White;
+            this.grb01.Controls.Add(this.gbWOsaekomi);
             this.grb01.Controls.Add(this.btnColor01);
             this.grb01.Controls.Add(this.txtWName);
             this.grb01.Controls.Add(this.label6);
@@ -346,9 +283,9 @@
             this.grb01.Controls.Add(this.groupBox4);
             this.grb01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb01.Location = new System.Drawing.Point(360, 15);
-            this.grb01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb01.Margin = new System.Windows.Forms.Padding(4);
             this.grb01.Name = "grb01";
-            this.grb01.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb01.Padding = new System.Windows.Forms.Padding(4);
             this.grb01.Size = new System.Drawing.Size(549, 169);
             this.grb01.TabIndex = 1;
             this.grb01.TabStop = false;
@@ -358,7 +295,7 @@
             // 
             this.btnColor01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColor01.Location = new System.Drawing.Point(460, 25);
-            this.btnColor01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnColor01.Margin = new System.Windows.Forms.Padding(4);
             this.btnColor01.Name = "btnColor01";
             this.btnColor01.Size = new System.Drawing.Size(80, 28);
             this.btnColor01.TabIndex = 5;
@@ -370,7 +307,7 @@
             // txtWName
             // 
             this.txtWName.Location = new System.Drawing.Point(76, 27);
-            this.txtWName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWName.Margin = new System.Windows.Forms.Padding(4);
             this.txtWName.Name = "txtWName";
             this.txtWName.Size = new System.Drawing.Size(247, 26);
             this.txtWName.TabIndex = 0;
@@ -391,10 +328,10 @@
             this.groupBox7.Controls.Add(this.btnWSM);
             this.groupBox7.Controls.Add(this.btnWSP);
             this.groupBox7.Controls.Add(this.txtWShido);
-            this.groupBox7.Location = new System.Drawing.Point(416, 71);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Location = new System.Drawing.Point(276, 71);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(124, 82);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
@@ -404,7 +341,7 @@
             // 
             this.btnWSM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWSM.Location = new System.Drawing.Point(79, 47);
-            this.btnWSM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWSM.Margin = new System.Windows.Forms.Padding(4);
             this.btnWSM.Name = "btnWSM";
             this.btnWSM.Size = new System.Drawing.Size(37, 28);
             this.btnWSM.TabIndex = 2;
@@ -417,7 +354,7 @@
             // 
             this.btnWSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWSP.Location = new System.Drawing.Point(7, 47);
-            this.btnWSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWSP.Margin = new System.Windows.Forms.Padding(4);
             this.btnWSP.Name = "btnWSP";
             this.btnWSP.Size = new System.Drawing.Size(37, 28);
             this.btnWSP.TabIndex = 1;
@@ -429,7 +366,7 @@
             // txtWShido
             // 
             this.txtWShido.Location = new System.Drawing.Point(21, 18);
-            this.txtWShido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWShido.Margin = new System.Windows.Forms.Padding(4);
             this.txtWShido.Name = "txtWShido";
             this.txtWShido.ReadOnly = true;
             this.txtWShido.Size = new System.Drawing.Size(79, 26);
@@ -445,9 +382,9 @@
             this.groupBox5.Controls.Add(this.btnWWP);
             this.groupBox5.Controls.Add(this.txtWWazari);
             this.groupBox5.Location = new System.Drawing.Point(144, 71);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(124, 82);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
@@ -457,7 +394,7 @@
             // 
             this.btnWWM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWWM.Location = new System.Drawing.Point(79, 47);
-            this.btnWWM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWWM.Margin = new System.Windows.Forms.Padding(4);
             this.btnWWM.Name = "btnWWM";
             this.btnWWM.Size = new System.Drawing.Size(37, 28);
             this.btnWWM.TabIndex = 2;
@@ -470,7 +407,7 @@
             // 
             this.btnWWP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWWP.Location = new System.Drawing.Point(7, 47);
-            this.btnWWP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWWP.Margin = new System.Windows.Forms.Padding(4);
             this.btnWWP.Name = "btnWWP";
             this.btnWWP.Size = new System.Drawing.Size(37, 28);
             this.btnWWP.TabIndex = 1;
@@ -482,7 +419,7 @@
             // txtWWazari
             // 
             this.txtWWazari.Location = new System.Drawing.Point(21, 18);
-            this.txtWWazari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWWazari.Margin = new System.Windows.Forms.Padding(4);
             this.txtWWazari.Name = "txtWWazari";
             this.txtWWazari.ReadOnly = true;
             this.txtWWazari.Size = new System.Drawing.Size(79, 26);
@@ -498,9 +435,9 @@
             this.groupBox4.Controls.Add(this.btnWIP);
             this.groupBox4.Controls.Add(this.txtWIppon);
             this.groupBox4.Location = new System.Drawing.Point(8, 71);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(124, 82);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
@@ -510,7 +447,7 @@
             // 
             this.btnWIM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWIM.Location = new System.Drawing.Point(79, 47);
-            this.btnWIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWIM.Margin = new System.Windows.Forms.Padding(4);
             this.btnWIM.Name = "btnWIM";
             this.btnWIM.Size = new System.Drawing.Size(37, 28);
             this.btnWIM.TabIndex = 2;
@@ -523,7 +460,7 @@
             // 
             this.btnWIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWIP.Location = new System.Drawing.Point(7, 47);
-            this.btnWIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWIP.Margin = new System.Windows.Forms.Padding(4);
             this.btnWIP.Name = "btnWIP";
             this.btnWIP.Size = new System.Drawing.Size(37, 28);
             this.btnWIP.TabIndex = 1;
@@ -535,7 +472,7 @@
             // txtWIppon
             // 
             this.txtWIppon.Location = new System.Drawing.Point(21, 18);
-            this.txtWIppon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWIppon.Margin = new System.Windows.Forms.Padding(4);
             this.txtWIppon.Name = "txtWIppon";
             this.txtWIppon.ReadOnly = true;
             this.txtWIppon.Size = new System.Drawing.Size(79, 26);
@@ -557,7 +494,8 @@
             // 
             // grb02
             // 
-            this.grb02.BackColor = System.Drawing.Color.LightBlue;
+            this.grb02.BackColor = System.Drawing.Color.MediumBlue;
+            this.grb02.Controls.Add(this.gbBOsaekomi);
             this.grb02.Controls.Add(this.btnColor02);
             this.grb02.Controls.Add(this.txtBName);
             this.grb02.Controls.Add(this.label3);
@@ -565,10 +503,11 @@
             this.grb02.Controls.Add(this.groupBox11);
             this.grb02.Controls.Add(this.groupBox12);
             this.grb02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb02.ForeColor = System.Drawing.Color.White;
             this.grb02.Location = new System.Drawing.Point(360, 338);
-            this.grb02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb02.Margin = new System.Windows.Forms.Padding(4);
             this.grb02.Name = "grb02";
-            this.grb02.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb02.Padding = new System.Windows.Forms.Padding(4);
             this.grb02.Size = new System.Drawing.Size(549, 169);
             this.grb02.TabIndex = 2;
             this.grb02.TabStop = false;
@@ -577,8 +516,9 @@
             // btnColor02
             // 
             this.btnColor02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColor02.ForeColor = System.Drawing.Color.Black;
             this.btnColor02.Location = new System.Drawing.Point(460, 25);
-            this.btnColor02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnColor02.Margin = new System.Windows.Forms.Padding(4);
             this.btnColor02.Name = "btnColor02";
             this.btnColor02.Size = new System.Drawing.Size(80, 28);
             this.btnColor02.TabIndex = 6;
@@ -590,7 +530,7 @@
             // txtBName
             // 
             this.txtBName.Location = new System.Drawing.Point(76, 27);
-            this.txtBName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBName.Name = "txtBName";
             this.txtBName.Size = new System.Drawing.Size(247, 26);
             this.txtBName.TabIndex = 3;
@@ -611,10 +551,11 @@
             this.groupBox9.Controls.Add(this.btnBSM);
             this.groupBox9.Controls.Add(this.btnBSP);
             this.groupBox9.Controls.Add(this.txtBShido);
-            this.groupBox9.Location = new System.Drawing.Point(416, 71);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.ForeColor = System.Drawing.Color.White;
+            this.groupBox9.Location = new System.Drawing.Point(276, 71);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(124, 82);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
@@ -623,8 +564,9 @@
             // btnBSM
             // 
             this.btnBSM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBSM.ForeColor = System.Drawing.Color.Black;
             this.btnBSM.Location = new System.Drawing.Point(79, 47);
-            this.btnBSM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBSM.Margin = new System.Windows.Forms.Padding(4);
             this.btnBSM.Name = "btnBSM";
             this.btnBSM.Size = new System.Drawing.Size(37, 28);
             this.btnBSM.TabIndex = 2;
@@ -636,8 +578,9 @@
             // btnBSP
             // 
             this.btnBSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBSP.ForeColor = System.Drawing.Color.Black;
             this.btnBSP.Location = new System.Drawing.Point(7, 47);
-            this.btnBSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBSP.Margin = new System.Windows.Forms.Padding(4);
             this.btnBSP.Name = "btnBSP";
             this.btnBSP.Size = new System.Drawing.Size(37, 28);
             this.btnBSP.TabIndex = 1;
@@ -649,7 +592,7 @@
             // txtBShido
             // 
             this.txtBShido.Location = new System.Drawing.Point(21, 18);
-            this.txtBShido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBShido.Margin = new System.Windows.Forms.Padding(4);
             this.txtBShido.Name = "txtBShido";
             this.txtBShido.ReadOnly = true;
             this.txtBShido.Size = new System.Drawing.Size(79, 26);
@@ -661,36 +604,39 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.button6);
+            this.groupBox11.Controls.Add(this.btnBWM);
             this.groupBox11.Controls.Add(this.btnBWP);
             this.groupBox11.Controls.Add(this.txtBWazari);
+            this.groupBox11.ForeColor = System.Drawing.Color.White;
             this.groupBox11.Location = new System.Drawing.Point(144, 71);
-            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox11.Size = new System.Drawing.Size(124, 82);
             this.groupBox11.TabIndex = 3;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "WAZARI";
             // 
-            // button6
+            // btnBWM
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(79, 47);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 28);
-            this.button6.TabIndex = 2;
-            this.button6.TabStop = false;
-            this.button6.Text = "-";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnBWP_Click);
+            this.btnBWM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBWM.ForeColor = System.Drawing.Color.Black;
+            this.btnBWM.Location = new System.Drawing.Point(79, 47);
+            this.btnBWM.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBWM.Name = "btnBWM";
+            this.btnBWM.Size = new System.Drawing.Size(37, 28);
+            this.btnBWM.TabIndex = 2;
+            this.btnBWM.TabStop = false;
+            this.btnBWM.Text = "-";
+            this.btnBWM.UseVisualStyleBackColor = true;
+            this.btnBWM.Click += new System.EventHandler(this.btnBWP_Click);
             // 
             // btnBWP
             // 
             this.btnBWP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBWP.ForeColor = System.Drawing.Color.Black;
             this.btnBWP.Location = new System.Drawing.Point(7, 47);
-            this.btnBWP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBWP.Margin = new System.Windows.Forms.Padding(4);
             this.btnBWP.Name = "btnBWP";
             this.btnBWP.Size = new System.Drawing.Size(37, 28);
             this.btnBWP.TabIndex = 1;
@@ -702,7 +648,7 @@
             // txtBWazari
             // 
             this.txtBWazari.Location = new System.Drawing.Point(21, 18);
-            this.txtBWazari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBWazari.Margin = new System.Windows.Forms.Padding(4);
             this.txtBWazari.Name = "txtBWazari";
             this.txtBWazari.ReadOnly = true;
             this.txtBWazari.Size = new System.Drawing.Size(79, 26);
@@ -717,10 +663,11 @@
             this.groupBox12.Controls.Add(this.btnBIM);
             this.groupBox12.Controls.Add(this.btnBIP);
             this.groupBox12.Controls.Add(this.txtBIppon);
+            this.groupBox12.ForeColor = System.Drawing.Color.White;
             this.groupBox12.Location = new System.Drawing.Point(8, 71);
-            this.groupBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox12.Size = new System.Drawing.Size(124, 82);
             this.groupBox12.TabIndex = 1;
             this.groupBox12.TabStop = false;
@@ -729,8 +676,9 @@
             // btnBIM
             // 
             this.btnBIM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBIM.ForeColor = System.Drawing.Color.Black;
             this.btnBIM.Location = new System.Drawing.Point(79, 47);
-            this.btnBIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBIM.Margin = new System.Windows.Forms.Padding(4);
             this.btnBIM.Name = "btnBIM";
             this.btnBIM.Size = new System.Drawing.Size(37, 28);
             this.btnBIM.TabIndex = 2;
@@ -742,8 +690,9 @@
             // btnBIP
             // 
             this.btnBIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBIP.ForeColor = System.Drawing.Color.Black;
             this.btnBIP.Location = new System.Drawing.Point(7, 47);
-            this.btnBIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBIP.Margin = new System.Windows.Forms.Padding(4);
             this.btnBIP.Name = "btnBIP";
             this.btnBIP.Size = new System.Drawing.Size(37, 28);
             this.btnBIP.TabIndex = 1;
@@ -755,7 +704,7 @@
             // txtBIppon
             // 
             this.txtBIppon.Location = new System.Drawing.Point(21, 18);
-            this.txtBIppon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBIppon.Margin = new System.Windows.Forms.Padding(4);
             this.txtBIppon.Name = "txtBIppon";
             this.txtBIppon.ReadOnly = true;
             this.txtBIppon.Size = new System.Drawing.Size(79, 26);
@@ -767,37 +716,139 @@
             // 
             // btnResetAll
             // 
-            this.btnResetAll.Location = new System.Drawing.Point(368, 247);
-            this.btnResetAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResetAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnResetAll.Location = new System.Drawing.Point(58, 406);
+            this.btnResetAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(109, 26);
+            this.btnResetAll.Size = new System.Drawing.Size(109, 47);
             this.btnResetAll.TabIndex = 4;
             this.btnResetAll.Text = "Reset All";
-            this.btnResetAll.UseVisualStyleBackColor = true;
+            this.btnResetAll.UseVisualStyleBackColor = false;
             this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
             // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.txtArea);
             this.groupBox13.Location = new System.Drawing.Point(16, 218);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox13.Size = new System.Drawing.Size(132, 73);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox13.Size = new System.Drawing.Size(452, 73);
             this.groupBox13.TabIndex = 5;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Área";
+            this.groupBox13.Text = "Texto";
             // 
             // txtArea
             // 
             this.txtArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArea.Location = new System.Drawing.Point(17, 26);
-            this.txtArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtArea.MaxLength = 2;
+            this.txtArea.Margin = new System.Windows.Forms.Padding(4);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(95, 30);
+            this.txtArea.Size = new System.Drawing.Size(408, 30);
             this.txtArea.TabIndex = 0;
             this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
+            // 
+            // gbWOsaekomi
+            // 
+            this.gbWOsaekomi.Controls.Add(this.btnWToketa);
+            this.gbWOsaekomi.Controls.Add(this.btnWOsaekomi);
+            this.gbWOsaekomi.Location = new System.Drawing.Point(417, 71);
+            this.gbWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.gbWOsaekomi.Name = "gbWOsaekomi";
+            this.gbWOsaekomi.Padding = new System.Windows.Forms.Padding(4);
+            this.gbWOsaekomi.Size = new System.Drawing.Size(124, 82);
+            this.gbWOsaekomi.TabIndex = 6;
+            this.gbWOsaekomi.TabStop = false;
+            this.gbWOsaekomi.Text = "OSAEKOMI";
+            // 
+            // gbBOsaekomi
+            // 
+            this.gbBOsaekomi.Controls.Add(this.btnBToketa);
+            this.gbBOsaekomi.Controls.Add(this.btnBOsaekomi);
+            this.gbBOsaekomi.ForeColor = System.Drawing.Color.White;
+            this.gbBOsaekomi.Location = new System.Drawing.Point(416, 71);
+            this.gbBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.gbBOsaekomi.Name = "gbBOsaekomi";
+            this.gbBOsaekomi.Padding = new System.Windows.Forms.Padding(4);
+            this.gbBOsaekomi.Size = new System.Drawing.Size(124, 82);
+            this.gbBOsaekomi.TabIndex = 4;
+            this.gbBOsaekomi.TabStop = false;
+            this.gbBOsaekomi.Text = "OSAEKOMI";
+            // 
+            // btnBToketa
+            // 
+            this.btnBToketa.BackColor = System.Drawing.Color.Yellow;
+            this.btnBToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBToketa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBToketa.Location = new System.Drawing.Point(8, 47);
+            this.btnBToketa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBToketa.Name = "btnBToketa";
+            this.btnBToketa.Size = new System.Drawing.Size(108, 28);
+            this.btnBToketa.TabIndex = 2;
+            this.btnBToketa.TabStop = false;
+            this.btnBToketa.Text = "toketa";
+            this.btnBToketa.UseVisualStyleBackColor = false;
+            this.btnBToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
+            // 
+            // btnBOsaekomi
+            // 
+            this.btnBOsaekomi.BackColor = System.Drawing.Color.Yellow;
+            this.btnBOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBOsaekomi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBOsaekomi.Location = new System.Drawing.Point(8, 19);
+            this.btnBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBOsaekomi.Name = "btnBOsaekomi";
+            this.btnBOsaekomi.Size = new System.Drawing.Size(108, 28);
+            this.btnBOsaekomi.TabIndex = 1;
+            this.btnBOsaekomi.TabStop = false;
+            this.btnBOsaekomi.Text = "osaekomi";
+            this.btnBOsaekomi.UseVisualStyleBackColor = false;
+            this.btnBOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
+            // 
+            // btnWToketa
+            // 
+            this.btnWToketa.BackColor = System.Drawing.Color.Yellow;
+            this.btnWToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWToketa.Location = new System.Drawing.Point(8, 47);
+            this.btnWToketa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWToketa.Name = "btnWToketa";
+            this.btnWToketa.Size = new System.Drawing.Size(108, 28);
+            this.btnWToketa.TabIndex = 2;
+            this.btnWToketa.TabStop = false;
+            this.btnWToketa.Text = "toketa";
+            this.btnWToketa.UseVisualStyleBackColor = false;
+            this.btnWToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
+            // 
+            // btnWOsaekomi
+            // 
+            this.btnWOsaekomi.BackColor = System.Drawing.Color.Yellow;
+            this.btnWOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWOsaekomi.Location = new System.Drawing.Point(8, 19);
+            this.btnWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWOsaekomi.Name = "btnWOsaekomi";
+            this.btnWOsaekomi.Size = new System.Drawing.Size(108, 28);
+            this.btnWOsaekomi.TabIndex = 1;
+            this.btnWOsaekomi.TabStop = false;
+            this.btnWOsaekomi.Text = "osekomi";
+            this.btnWOsaekomi.UseVisualStyleBackColor = false;
+            this.btnWOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
+            // 
+            // pnOsaePto
+            // 
+            this.pnOsaePto.Controls.Add(this.lblOsaePto);
+            this.pnOsaePto.Location = new System.Drawing.Point(11, 81);
+            this.pnOsaePto.Name = "pnOsaePto";
+            this.pnOsaePto.Size = new System.Drawing.Size(200, 35);
+            this.pnOsaePto.TabIndex = 6;
+            // 
+            // lblOsaePto
+            // 
+            this.lblOsaePto.AutoSize = true;
+            this.lblOsaePto.Location = new System.Drawing.Point(15, 8);
+            this.lblOsaePto.Name = "lblOsaePto";
+            this.lblOsaePto.Size = new System.Drawing.Size(69, 20);
+            this.lblOsaePto.TabIndex = 6;
+            this.lblOsaePto.Text = "----------";
             // 
             // frmControl
             // 
@@ -811,7 +862,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control Panel";
@@ -821,9 +872,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.pnOsaePto.ResumeLayout(false);
-            this.pnOsaePto.PerformLayout();
-            this.pnPto.ResumeLayout(false);
             this.grb01.ResumeLayout(false);
             this.grb01.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -842,6 +890,10 @@
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
+            this.gbWOsaekomi.ResumeLayout(false);
+            this.gbBOsaekomi.ResumeLayout(false);
+            this.pnOsaePto.ResumeLayout(false);
+            this.pnOsaePto.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -858,10 +910,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnOsaeReset;
-        private System.Windows.Forms.Button btnOsaeStop;
-        private System.Windows.Forms.Button btnOsaeStart;
         private System.Windows.Forms.Label lblOsae;
-        private System.Windows.Forms.Label lblOsaePto;
         private System.Windows.Forms.GroupBox grb01;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -888,21 +937,26 @@
         private System.Windows.Forms.Button btnBSP;
         private System.Windows.Forms.TextBox txtBShido;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnBWM;
         private System.Windows.Forms.Button btnBWP;
         private System.Windows.Forms.TextBox txtBWazari;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Button btnBIM;
         private System.Windows.Forms.Button btnBIP;
         private System.Windows.Forms.TextBox txtBIppon;
-        private System.Windows.Forms.Panel pnOsaePto;
-        private System.Windows.Forms.Button btnBOsae;
-        private System.Windows.Forms.Button btnWOsae;
         private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Button btnColor01;
         private System.Windows.Forms.Button btnColor02;
-        private System.Windows.Forms.Panel pnPto;
+        private System.Windows.Forms.Button btnGS;
+        private System.Windows.Forms.GroupBox gbWOsaekomi;
+        private System.Windows.Forms.Button btnWToketa;
+        private System.Windows.Forms.Button btnWOsaekomi;
+        private System.Windows.Forms.GroupBox gbBOsaekomi;
+        private System.Windows.Forms.Button btnBToketa;
+        private System.Windows.Forms.Button btnBOsaekomi;
+        private System.Windows.Forms.Panel pnOsaePto;
+        private System.Windows.Forms.Label lblOsaePto;
     }
 }

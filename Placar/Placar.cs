@@ -10,19 +10,20 @@ namespace WindowsFormsApplication1
         public frmPlacar()
         {
             InitializeComponent();
+            lblTexto.Text = "";
 
         }
 
         public void placarColor(Color color01, Color color02)
         {
-            pnl01.BackColor = color01;
-            pnl02.BackColor = color02;
+            pnWhite.BackColor = color01;
+            pnBlue.BackColor = color02;
         }
 
-        public void area(string cText)
-        {
-            lblArea.Text = cText;
-        }
+        //public void area(string cText)
+        //{
+        //    lblArea.Text = cText;
+        //}
 
         public void wIppon(string cText)
         {
@@ -35,7 +36,7 @@ namespace WindowsFormsApplication1
         public void wShido(string cText)
         {
             int nAux;
-            lblWShido.Text = cText;
+            //lblWShido.Text = cText;
             nAux = Convert.ToInt16(cText);
             pnWShido1.Visible = false;
             pnWShido2.Visible = false;
@@ -74,7 +75,7 @@ namespace WindowsFormsApplication1
         public void bShido(string cText)
         {
             int nAux;
-            lblBShido.Text = cText;
+            //lblBShido.Text = cText;
             nAux = Convert.ToInt16(cText);
             pnBShido1.Visible = false;
             pnBShido2.Visible = false;
@@ -117,32 +118,49 @@ namespace WindowsFormsApplication1
             lblJikan.Text = cText;
         }
 
+        public void JikanColor(Color color)
+        {
+            lblJikan.BackColor = color;
+        }
+
+
         public void Osae(string cText)
         {
             lblOsae.Text = cText;
         }
 
-        public void OsaePto(string cText)
+        public void Texto(string cText)
         {
-            if (cText == "NONE")
-                lblOsaePto.Visible = false;
-            else
-                lblOsaePto.Visible = true;
-            lblOsaePto.Text = cText;
+            lblTexto.Visible = true;
+            lblTexto.Text = cText;
         }
 
-        private void pnl01_Resize(object sender, EventArgs e)
+        public void GS()
         {
-            pnWhite.Location = new Point(                
-                this.pnl01.Width / 2 - pnWhite.Size.Width / 2,
-                106);
+            lblGS.Visible = !lblGS.Visible;
         }
 
-        private void pnl02_Resize(object sender, EventArgs e)
-        {
-            pnBlue.Location = new Point(
-                this.pnl02.Width / 2 - pnBlue.Size.Width / 2,
-                106);
-        }
+        //public void OsaePto(string cText)
+        //{
+        //    if (cText == "NONE")
+        //        lblOsaePto.Visible = false;
+        //    else
+        //        lblOsaePto.Visible = true;
+        //    lblOsaePto.Text = cText;
+        //}
+
+        //private void pnl01_Resize(object sender, EventArgs e)
+        //{
+        //    pnWhite.Location = new Point(                
+        //        this.pnl01.Width / 2 - pnWhite.Size.Width / 2,
+        //        106);
+        //}
+
+        //private void pnl02_Resize(object sender, EventArgs e)
+        //{
+        //    pnBlue.Location = new Point(
+        //        this.pnl02.Width / 2 - pnBlue.Size.Width / 2,
+        //        106);
+        //}
     }
 }
