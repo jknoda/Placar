@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmControl));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGS = new System.Windows.Forms.Button();
             this.btnJikanSet = new System.Windows.Forms.Button();
@@ -40,9 +41,14 @@
             this.mtxtJikan = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pnOsaePto = new System.Windows.Forms.Panel();
+            this.lblOsaePto = new System.Windows.Forms.Label();
             this.btnOsaeReset = new System.Windows.Forms.Button();
             this.lblOsae = new System.Windows.Forms.Label();
             this.grb01 = new System.Windows.Forms.GroupBox();
+            this.gbWOsaekomi = new System.Windows.Forms.GroupBox();
+            this.btnWToketa = new System.Windows.Forms.Button();
+            this.btnWOsaekomi = new System.Windows.Forms.Button();
             this.btnColor01 = new System.Windows.Forms.Button();
             this.txtWName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,6 +67,9 @@
             this.timerJikan = new System.Windows.Forms.Timer(this.components);
             this.timerOsae = new System.Windows.Forms.Timer(this.components);
             this.grb02 = new System.Windows.Forms.GroupBox();
+            this.gbBOsaekomi = new System.Windows.Forms.GroupBox();
+            this.btnBToketa = new System.Windows.Forms.Button();
+            this.btnBOsaekomi = new System.Windows.Forms.Button();
             this.btnColor02 = new System.Windows.Forms.Button();
             this.txtBName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,28 +88,22 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.txtArea = new System.Windows.Forms.TextBox();
-            this.gbWOsaekomi = new System.Windows.Forms.GroupBox();
-            this.gbBOsaekomi = new System.Windows.Forms.GroupBox();
-            this.btnBToketa = new System.Windows.Forms.Button();
-            this.btnBOsaekomi = new System.Windows.Forms.Button();
-            this.btnWToketa = new System.Windows.Forms.Button();
-            this.btnWOsaekomi = new System.Windows.Forms.Button();
-            this.pnOsaePto = new System.Windows.Forms.Panel();
-            this.lblOsaePto = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.pnOsaePto.SuspendLayout();
             this.grb01.SuspendLayout();
+            this.gbWOsaekomi.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.grb02.SuspendLayout();
+            this.gbBOsaekomi.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.gbWOsaekomi.SuspendLayout();
-            this.gbBOsaekomi.SuspendLayout();
-            this.pnOsaePto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -245,6 +248,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Osaekomi";
             // 
+            // pnOsaePto
+            // 
+            this.pnOsaePto.Controls.Add(this.lblOsaePto);
+            this.pnOsaePto.Location = new System.Drawing.Point(11, 81);
+            this.pnOsaePto.Name = "pnOsaePto";
+            this.pnOsaePto.Size = new System.Drawing.Size(200, 35);
+            this.pnOsaePto.TabIndex = 6;
+            // 
+            // lblOsaePto
+            // 
+            this.lblOsaePto.AutoSize = true;
+            this.lblOsaePto.Location = new System.Drawing.Point(15, 8);
+            this.lblOsaePto.Name = "lblOsaePto";
+            this.lblOsaePto.Size = new System.Drawing.Size(69, 20);
+            this.lblOsaePto.TabIndex = 6;
+            this.lblOsaePto.Text = "----------";
+            // 
             // btnOsaeReset
             // 
             this.btnOsaeReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -290,6 +310,47 @@
             this.grb01.TabIndex = 1;
             this.grb01.TabStop = false;
             this.grb01.Text = "01";
+            // 
+            // gbWOsaekomi
+            // 
+            this.gbWOsaekomi.Controls.Add(this.btnWToketa);
+            this.gbWOsaekomi.Controls.Add(this.btnWOsaekomi);
+            this.gbWOsaekomi.Location = new System.Drawing.Point(417, 71);
+            this.gbWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.gbWOsaekomi.Name = "gbWOsaekomi";
+            this.gbWOsaekomi.Padding = new System.Windows.Forms.Padding(4);
+            this.gbWOsaekomi.Size = new System.Drawing.Size(124, 82);
+            this.gbWOsaekomi.TabIndex = 6;
+            this.gbWOsaekomi.TabStop = false;
+            this.gbWOsaekomi.Text = "OSAEKOMI";
+            // 
+            // btnWToketa
+            // 
+            this.btnWToketa.BackColor = System.Drawing.Color.Yellow;
+            this.btnWToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWToketa.Location = new System.Drawing.Point(8, 47);
+            this.btnWToketa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWToketa.Name = "btnWToketa";
+            this.btnWToketa.Size = new System.Drawing.Size(108, 28);
+            this.btnWToketa.TabIndex = 2;
+            this.btnWToketa.TabStop = false;
+            this.btnWToketa.Text = "toketa";
+            this.btnWToketa.UseVisualStyleBackColor = false;
+            this.btnWToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
+            // 
+            // btnWOsaekomi
+            // 
+            this.btnWOsaekomi.BackColor = System.Drawing.Color.Yellow;
+            this.btnWOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWOsaekomi.Location = new System.Drawing.Point(8, 19);
+            this.btnWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWOsaekomi.Name = "btnWOsaekomi";
+            this.btnWOsaekomi.Size = new System.Drawing.Size(108, 28);
+            this.btnWOsaekomi.TabIndex = 1;
+            this.btnWOsaekomi.TabStop = false;
+            this.btnWOsaekomi.Text = "osekomi";
+            this.btnWOsaekomi.UseVisualStyleBackColor = false;
+            this.btnWOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
             // 
             // btnColor01
             // 
@@ -513,6 +574,50 @@
             this.grb02.TabStop = false;
             this.grb02.Text = "02";
             // 
+            // gbBOsaekomi
+            // 
+            this.gbBOsaekomi.Controls.Add(this.btnBToketa);
+            this.gbBOsaekomi.Controls.Add(this.btnBOsaekomi);
+            this.gbBOsaekomi.ForeColor = System.Drawing.Color.White;
+            this.gbBOsaekomi.Location = new System.Drawing.Point(416, 71);
+            this.gbBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.gbBOsaekomi.Name = "gbBOsaekomi";
+            this.gbBOsaekomi.Padding = new System.Windows.Forms.Padding(4);
+            this.gbBOsaekomi.Size = new System.Drawing.Size(124, 82);
+            this.gbBOsaekomi.TabIndex = 4;
+            this.gbBOsaekomi.TabStop = false;
+            this.gbBOsaekomi.Text = "OSAEKOMI";
+            // 
+            // btnBToketa
+            // 
+            this.btnBToketa.BackColor = System.Drawing.Color.Yellow;
+            this.btnBToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBToketa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBToketa.Location = new System.Drawing.Point(8, 47);
+            this.btnBToketa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBToketa.Name = "btnBToketa";
+            this.btnBToketa.Size = new System.Drawing.Size(108, 28);
+            this.btnBToketa.TabIndex = 2;
+            this.btnBToketa.TabStop = false;
+            this.btnBToketa.Text = "toketa";
+            this.btnBToketa.UseVisualStyleBackColor = false;
+            this.btnBToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
+            // 
+            // btnBOsaekomi
+            // 
+            this.btnBOsaekomi.BackColor = System.Drawing.Color.Yellow;
+            this.btnBOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBOsaekomi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBOsaekomi.Location = new System.Drawing.Point(8, 19);
+            this.btnBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBOsaekomi.Name = "btnBOsaekomi";
+            this.btnBOsaekomi.Size = new System.Drawing.Size(108, 28);
+            this.btnBOsaekomi.TabIndex = 1;
+            this.btnBOsaekomi.TabStop = false;
+            this.btnBOsaekomi.Text = "osaekomi";
+            this.btnBOsaekomi.UseVisualStyleBackColor = false;
+            this.btnBOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
+            // 
             // btnColor02
             // 
             this.btnColor02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -717,7 +822,7 @@
             // btnResetAll
             // 
             this.btnResetAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnResetAll.Location = new System.Drawing.Point(58, 406);
+            this.btnResetAll.Location = new System.Drawing.Point(48, 460);
             this.btnResetAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetAll.Name = "btnResetAll";
             this.btnResetAll.Size = new System.Drawing.Size(109, 47);
@@ -748,113 +853,22 @@
             this.txtArea.TabIndex = 0;
             this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
-            // gbWOsaekomi
+            // pictureBox1
             // 
-            this.gbWOsaekomi.Controls.Add(this.btnWToketa);
-            this.gbWOsaekomi.Controls.Add(this.btnWOsaekomi);
-            this.gbWOsaekomi.Location = new System.Drawing.Point(417, 71);
-            this.gbWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
-            this.gbWOsaekomi.Name = "gbWOsaekomi";
-            this.gbWOsaekomi.Padding = new System.Windows.Forms.Padding(4);
-            this.gbWOsaekomi.Size = new System.Drawing.Size(124, 82);
-            this.gbWOsaekomi.TabIndex = 6;
-            this.gbWOsaekomi.TabStop = false;
-            this.gbWOsaekomi.Text = "OSAEKOMI";
-            // 
-            // gbBOsaekomi
-            // 
-            this.gbBOsaekomi.Controls.Add(this.btnBToketa);
-            this.gbBOsaekomi.Controls.Add(this.btnBOsaekomi);
-            this.gbBOsaekomi.ForeColor = System.Drawing.Color.White;
-            this.gbBOsaekomi.Location = new System.Drawing.Point(416, 71);
-            this.gbBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
-            this.gbBOsaekomi.Name = "gbBOsaekomi";
-            this.gbBOsaekomi.Padding = new System.Windows.Forms.Padding(4);
-            this.gbBOsaekomi.Size = new System.Drawing.Size(124, 82);
-            this.gbBOsaekomi.TabIndex = 4;
-            this.gbBOsaekomi.TabStop = false;
-            this.gbBOsaekomi.Text = "OSAEKOMI";
-            // 
-            // btnBToketa
-            // 
-            this.btnBToketa.BackColor = System.Drawing.Color.Yellow;
-            this.btnBToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBToketa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBToketa.Location = new System.Drawing.Point(8, 47);
-            this.btnBToketa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBToketa.Name = "btnBToketa";
-            this.btnBToketa.Size = new System.Drawing.Size(108, 28);
-            this.btnBToketa.TabIndex = 2;
-            this.btnBToketa.TabStop = false;
-            this.btnBToketa.Text = "toketa";
-            this.btnBToketa.UseVisualStyleBackColor = false;
-            this.btnBToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
-            // 
-            // btnBOsaekomi
-            // 
-            this.btnBOsaekomi.BackColor = System.Drawing.Color.Yellow;
-            this.btnBOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBOsaekomi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBOsaekomi.Location = new System.Drawing.Point(8, 19);
-            this.btnBOsaekomi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBOsaekomi.Name = "btnBOsaekomi";
-            this.btnBOsaekomi.Size = new System.Drawing.Size(108, 28);
-            this.btnBOsaekomi.TabIndex = 1;
-            this.btnBOsaekomi.TabStop = false;
-            this.btnBOsaekomi.Text = "osaekomi";
-            this.btnBOsaekomi.UseVisualStyleBackColor = false;
-            this.btnBOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
-            // 
-            // btnWToketa
-            // 
-            this.btnWToketa.BackColor = System.Drawing.Color.Yellow;
-            this.btnWToketa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWToketa.Location = new System.Drawing.Point(8, 47);
-            this.btnWToketa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnWToketa.Name = "btnWToketa";
-            this.btnWToketa.Size = new System.Drawing.Size(108, 28);
-            this.btnWToketa.TabIndex = 2;
-            this.btnWToketa.TabStop = false;
-            this.btnWToketa.Text = "toketa";
-            this.btnWToketa.UseVisualStyleBackColor = false;
-            this.btnWToketa.Click += new System.EventHandler(this.btnOsaeStop_Click);
-            // 
-            // btnWOsaekomi
-            // 
-            this.btnWOsaekomi.BackColor = System.Drawing.Color.Yellow;
-            this.btnWOsaekomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWOsaekomi.Location = new System.Drawing.Point(8, 19);
-            this.btnWOsaekomi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnWOsaekomi.Name = "btnWOsaekomi";
-            this.btnWOsaekomi.Size = new System.Drawing.Size(108, 28);
-            this.btnWOsaekomi.TabIndex = 1;
-            this.btnWOsaekomi.TabStop = false;
-            this.btnWOsaekomi.Text = "osekomi";
-            this.btnWOsaekomi.UseVisualStyleBackColor = false;
-            this.btnWOsaekomi.Click += new System.EventHandler(this.btnOsaeStart_Click);
-            // 
-            // pnOsaePto
-            // 
-            this.pnOsaePto.Controls.Add(this.lblOsaePto);
-            this.pnOsaePto.Location = new System.Drawing.Point(11, 81);
-            this.pnOsaePto.Name = "pnOsaePto";
-            this.pnOsaePto.Size = new System.Drawing.Size(200, 35);
-            this.pnOsaePto.TabIndex = 6;
-            // 
-            // lblOsaePto
-            // 
-            this.lblOsaePto.AutoSize = true;
-            this.lblOsaePto.Location = new System.Drawing.Point(15, 8);
-            this.lblOsaePto.Name = "lblOsaePto";
-            this.lblOsaePto.Size = new System.Drawing.Size(69, 20);
-            this.lblOsaePto.TabIndex = 6;
-            this.lblOsaePto.Text = "----------";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 298);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 519);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.btnResetAll);
             this.Controls.Add(this.grb02);
@@ -872,8 +886,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.pnOsaePto.ResumeLayout(false);
+            this.pnOsaePto.PerformLayout();
             this.grb01.ResumeLayout(false);
             this.grb01.PerformLayout();
+            this.gbWOsaekomi.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -882,6 +899,7 @@
             this.groupBox4.PerformLayout();
             this.grb02.ResumeLayout(false);
             this.grb02.PerformLayout();
+            this.gbBOsaekomi.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -890,10 +908,7 @@
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.gbWOsaekomi.ResumeLayout(false);
-            this.gbBOsaekomi.ResumeLayout(false);
-            this.pnOsaePto.ResumeLayout(false);
-            this.pnOsaePto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -958,5 +973,6 @@
         private System.Windows.Forms.Button btnBOsaekomi;
         private System.Windows.Forms.Panel pnOsaePto;
         private System.Windows.Forms.Label lblOsaePto;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

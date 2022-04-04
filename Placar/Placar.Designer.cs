@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlacar));
             this.gbOsaekomi = new System.Windows.Forms.GroupBox();
             this.lblOsae = new System.Windows.Forms.Label();
             this.pnWhite = new System.Windows.Forms.Panel();
+            this.lblWWazari = new System.Windows.Forms.Label();
+            this.lblWTexto = new System.Windows.Forms.Label();
             this.lblWIppon = new System.Windows.Forms.Label();
             this.pnWShido1 = new System.Windows.Forms.Panel();
             this.lblWName = new System.Windows.Forms.Label();
             this.pnWShido2 = new System.Windows.Forms.Panel();
             this.pnWShido3 = new System.Windows.Forms.Panel();
             this.pnBlue = new System.Windows.Forms.Panel();
+            this.lblBWazari = new System.Windows.Forms.Label();
+            this.lblBIppon = new System.Windows.Forms.Label();
+            this.lblBTexto = new System.Windows.Forms.Label();
             this.pnBShido1 = new System.Windows.Forms.Panel();
             this.lblBName = new System.Windows.Forms.Label();
             this.pnBShido3 = new System.Windows.Forms.Panel();
             this.pnBShido2 = new System.Windows.Forms.Panel();
             this.lblJikan = new System.Windows.Forms.Label();
             this.lblGS = new System.Windows.Forms.Label();
-            this.lblWTexto = new System.Windows.Forms.Label();
-            this.lblBTexto = new System.Windows.Forms.Label();
-            this.lblWWazari = new System.Windows.Forms.Label();
-            this.lblBIppon = new System.Windows.Forms.Label();
-            this.lblBWazari = new System.Windows.Forms.Label();
             this.lblTexto = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbOsaekomi.SuspendLayout();
             this.pnWhite.SuspendLayout();
             this.pnBlue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbOsaekomi
@@ -98,6 +101,31 @@
             this.pnWhite.Name = "pnWhite";
             this.pnWhite.Size = new System.Drawing.Size(1245, 230);
             this.pnWhite.TabIndex = 8;
+            // 
+            // lblWWazari
+            // 
+            this.lblWWazari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWWazari.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWWazari.Location = new System.Drawing.Point(815, 10);
+            this.lblWWazari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWWazari.Name = "lblWWazari";
+            this.lblWWazari.Size = new System.Drawing.Size(108, 171);
+            this.lblWWazari.TabIndex = 14;
+            this.lblWWazari.Text = "0";
+            this.lblWWazari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWTexto
+            // 
+            this.lblWTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWTexto.AutoSize = true;
+            this.lblWTexto.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWTexto.Location = new System.Drawing.Point(20, 160);
+            this.lblWTexto.Name = "lblWTexto";
+            this.lblWTexto.Size = new System.Drawing.Size(128, 58);
+            this.lblWTexto.TabIndex = 13;
+            this.lblWTexto.Text = "Texto";
+            this.lblWTexto.Visible = false;
             // 
             // lblWIppon
             // 
@@ -174,6 +202,46 @@
             this.pnBlue.Size = new System.Drawing.Size(1245, 230);
             this.pnBlue.TabIndex = 13;
             // 
+            // lblBWazari
+            // 
+            this.lblBWazari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBWazari.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBWazari.ForeColor = System.Drawing.Color.White;
+            this.lblBWazari.Location = new System.Drawing.Point(815, 10);
+            this.lblBWazari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBWazari.Name = "lblBWazari";
+            this.lblBWazari.Size = new System.Drawing.Size(108, 170);
+            this.lblBWazari.TabIndex = 16;
+            this.lblBWazari.Text = "0";
+            this.lblBWazari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBIppon
+            // 
+            this.lblBIppon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBIppon.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBIppon.ForeColor = System.Drawing.Color.White;
+            this.lblBIppon.Location = new System.Drawing.Point(700, 10);
+            this.lblBIppon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBIppon.Name = "lblBIppon";
+            this.lblBIppon.Size = new System.Drawing.Size(108, 170);
+            this.lblBIppon.TabIndex = 15;
+            this.lblBIppon.Text = "0";
+            this.lblBIppon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBTexto
+            // 
+            this.lblBTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBTexto.AutoSize = true;
+            this.lblBTexto.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBTexto.ForeColor = System.Drawing.Color.White;
+            this.lblBTexto.Location = new System.Drawing.Point(20, 160);
+            this.lblBTexto.Name = "lblBTexto";
+            this.lblBTexto.Size = new System.Drawing.Size(128, 58);
+            this.lblBTexto.TabIndex = 14;
+            this.lblBTexto.Text = "Texto";
+            this.lblBTexto.Visible = false;
+            // 
             // pnBShido1
             // 
             this.pnBShido1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,71 +315,6 @@
             this.lblGS.Text = "GS";
             this.lblGS.Visible = false;
             // 
-            // lblWTexto
-            // 
-            this.lblWTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWTexto.AutoSize = true;
-            this.lblWTexto.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWTexto.Location = new System.Drawing.Point(20, 160);
-            this.lblWTexto.Name = "lblWTexto";
-            this.lblWTexto.Size = new System.Drawing.Size(128, 58);
-            this.lblWTexto.TabIndex = 13;
-            this.lblWTexto.Text = "Texto";
-            this.lblWTexto.Visible = false;
-            // 
-            // lblBTexto
-            // 
-            this.lblBTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBTexto.AutoSize = true;
-            this.lblBTexto.Font = new System.Drawing.Font("Arial Narrow", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBTexto.ForeColor = System.Drawing.Color.White;
-            this.lblBTexto.Location = new System.Drawing.Point(20, 160);
-            this.lblBTexto.Name = "lblBTexto";
-            this.lblBTexto.Size = new System.Drawing.Size(128, 58);
-            this.lblBTexto.TabIndex = 14;
-            this.lblBTexto.Text = "Texto";
-            this.lblBTexto.Visible = false;
-            // 
-            // lblWWazari
-            // 
-            this.lblWWazari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWWazari.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWWazari.Location = new System.Drawing.Point(815, 10);
-            this.lblWWazari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWWazari.Name = "lblWWazari";
-            this.lblWWazari.Size = new System.Drawing.Size(108, 171);
-            this.lblWWazari.TabIndex = 14;
-            this.lblWWazari.Text = "0";
-            this.lblWWazari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblBIppon
-            // 
-            this.lblBIppon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBIppon.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBIppon.ForeColor = System.Drawing.Color.White;
-            this.lblBIppon.Location = new System.Drawing.Point(700, 10);
-            this.lblBIppon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBIppon.Name = "lblBIppon";
-            this.lblBIppon.Size = new System.Drawing.Size(108, 170);
-            this.lblBIppon.TabIndex = 15;
-            this.lblBIppon.Text = "0";
-            this.lblBIppon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblBWazari
-            // 
-            this.lblBWazari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBWazari.Font = new System.Drawing.Font("Arial", 99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBWazari.ForeColor = System.Drawing.Color.White;
-            this.lblBWazari.Location = new System.Drawing.Point(815, 10);
-            this.lblBWazari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBWazari.Name = "lblBWazari";
-            this.lblBWazari.Size = new System.Drawing.Size(108, 170);
-            this.lblBWazari.TabIndex = 16;
-            this.lblBWazari.Text = "0";
-            this.lblBWazari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblTexto
             // 
             this.lblTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -324,6 +327,16 @@
             this.lblTexto.Text = "TEXTO";
             this.lblTexto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 482);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(222, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPlacar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,6 +344,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTexto);
             this.Controls.Add(this.lblGS);
             this.Controls.Add(this.lblJikan);
@@ -347,6 +361,7 @@
             this.pnWhite.PerformLayout();
             this.pnBlue.ResumeLayout(false);
             this.pnBlue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,6 +389,7 @@
         private System.Windows.Forms.Label lblBWazari;
         private System.Windows.Forms.Label lblBIppon;
         private System.Windows.Forms.Label lblTexto;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

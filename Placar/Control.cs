@@ -7,7 +7,7 @@ namespace WindowsFormsApplication1
 {
     public partial class frmControl : Form
     {
-        frmPlacar formPlacarArb = new frmPlacar();
+        //frmPlacar formPlacarArb = new frmPlacar();
         frmPlacar formPlacarPub = new frmPlacar();
 
         int hJikan = 0, mJikan = 4, sJikan = 0;
@@ -31,12 +31,12 @@ namespace WindowsFormsApplication1
         private void btnGS_Click(object sender, EventArgs e)
         {
             GS = !GS;
-            formPlacarArb.GS();
+            //formPlacarArb.GS();
             formPlacarPub.GS();
         }
         private void txtArea_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.Texto(txtArea.Text);
+            //formPlacarArb.Texto(txtArea.Text);
             formPlacarPub.Texto(txtArea.Text);
         }
         private void Sinal()
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
         }
         private void frmControl_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formPlacarArb.Close();
+            //formPlacarArb.Close();
             formPlacarPub.Close();
         }
 
@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
                 if (GS)
                 {
                     GS = !GS;
-                    formPlacarArb.GS();
+                    //formPlacarArb.GS();
                     formPlacarPub.GS();
                 }
                 wAwasete = false;
@@ -87,7 +87,7 @@ namespace WindowsFormsApplication1
             if ((nTipo == 1) || (nTipo == 3))
             {
                 timerJikan.Stop();
-                formPlacarArb.JikanColor(Color.White);
+                //formPlacarArb.JikanColor(Color.White);
                 formPlacarPub.JikanColor(Color.White);
                 if (GS)
                 {
@@ -197,7 +197,7 @@ namespace WindowsFormsApplication1
             timerJikan.Start();
             if (pnOsaePto.Visible)
                 timerOsae.Start();
-            formPlacarArb.JikanColor(Color.White);
+            //formPlacarArb.JikanColor(Color.White);
             formPlacarPub.JikanColor(Color.White);
         }
 
@@ -205,7 +205,7 @@ namespace WindowsFormsApplication1
         {
             timerJikan.Stop();
             btnOsaeStop_Click(sender, e);
-            formPlacarArb.JikanColor(Color.Red);
+            //formPlacarArb.JikanColor(Color.Red);
             formPlacarPub.JikanColor(Color.Red);
         }
         private void btnJikanReset_Click(object sender, EventArgs e)
@@ -219,7 +219,7 @@ namespace WindowsFormsApplication1
 
         private void lblJikan_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.Jikan(lblJikan.Text);
+            //formPlacarArb.Jikan(lblJikan.Text);
             formPlacarPub.Jikan(lblJikan.Text);
 
         }
@@ -322,7 +322,7 @@ namespace WindowsFormsApplication1
 
         private void lblOsae_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.Osae(lblOsae.Text);
+            //formPlacarArb.Osae(lblOsae.Text);
             formPlacarPub.Osae(lblOsae.Text);
         }
 
@@ -356,7 +356,7 @@ namespace WindowsFormsApplication1
         #region  white_control
         private void txtWName_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.wName(txtWName.Text);
+            //formPlacarArb.wName(txtWName.Text);
             formPlacarPub.wName(txtWName.Text);
         }
 
@@ -384,10 +384,11 @@ namespace WindowsFormsApplication1
             if (nAux < 0) nAux = 0;
             if (nAux > 1) nAux = 1;
             txtWIppon.Text = nAux.ToString();
+            if (nAux >= 1) timerJikan.Stop();
         }
         private void txtWIppon_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.wIppon(txtWIppon.Text);
+            //formPlacarArb.wIppon(txtWIppon.Text);
             formPlacarPub.wIppon(txtWIppon.Text);
         }
 
@@ -425,13 +426,13 @@ namespace WindowsFormsApplication1
         }
         private void txtWWazari_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.wWazari(txtWWazari.Text);
+            //formPlacarArb.wWazari(txtWWazari.Text);
             formPlacarPub.wWazari(txtWWazari.Text);
         }
 
         private void btnWSP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            int nAux = Convert.ToInt16(txtWShido.Text);
             if (sender.Equals(btnWSP))
             {
                 nAux = Convert.ToInt16(txtWShido.Text) + 1;
@@ -439,16 +440,21 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                if (nAux == 3)
+                    BlueIppon(false);
                 nAux = Convert.ToInt16(txtWShido.Text) - 1;
             }
             if (nAux < 0) nAux = 0;
             if (nAux > 3) nAux = 3;
             txtWShido.Text = nAux.ToString();
+            if (nAux == 3)
+                BlueIppon(true);
+
         }
 
         private void txtWShido_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.wShido(txtWShido.Text);
+            //formPlacarArb.wShido(txtWShido.Text);
             formPlacarPub.wShido(txtWShido.Text);
         }
         private void btnColor01_Click(object sender, EventArgs e)
@@ -458,7 +464,7 @@ namespace WindowsFormsApplication1
             {
                 grb01.BackColor = colorDlg.Color;
                 //btnWOsae.BackColor = colorDlg.Color;
-                formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
+                //formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
                 formPlacarPub.placarColor(grb01.BackColor, grb02.BackColor);
             }
 
@@ -468,7 +474,7 @@ namespace WindowsFormsApplication1
         #region blue_control
         private void txtBName_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.bName(txtBName.Text);
+            //formPlacarArb.bName(txtBName.Text);
             formPlacarPub.bName(txtBName.Text);
         }
 
@@ -497,11 +503,12 @@ namespace WindowsFormsApplication1
             if (nAux < 0) nAux = 0;
             if (nAux > 1) nAux = 1;
             txtBIppon.Text = nAux.ToString();
+            if (nAux >= 1) timerJikan.Stop();
         }
 
         private void txtBIppon_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.bIppon(txtBIppon.Text);
+            //formPlacarArb.bIppon(txtBIppon.Text);
             formPlacarPub.bIppon(txtBIppon.Text);
         }
         private void btnBWP_Click(object sender, EventArgs e)
@@ -540,27 +547,31 @@ namespace WindowsFormsApplication1
 
         private void txtBWazari_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.bWazari(txtBWazari.Text);
+            //formPlacarArb.bWazari(txtBWazari.Text);
             formPlacarPub.bWazari(txtBWazari.Text);
         }
         private void btnBSP_Click(object sender, EventArgs e)
         {
-            int nAux;
+            int nAux = Convert.ToInt16(txtWShido.Text);
             if (sender.Equals(btnBSP))
             {
                 nAux = Convert.ToInt16(txtBShido.Text) + 1;
             }
             else
             {
+                if (nAux == 3)
+                    WhiteIppon(false);
                 nAux = Convert.ToInt16(txtBShido.Text) - 1;
             }
             if (nAux < 0) nAux = 0;
             if (nAux > 3) nAux = 3;
             txtBShido.Text = nAux.ToString();
+            if (nAux == 3)
+                WhiteIppon(true);
         }
         private void txtBShido_TextChanged(object sender, EventArgs e)
         {
-            formPlacarArb.bShido(txtBShido.Text);
+            //formPlacarArb.bShido(txtBShido.Text);
             formPlacarPub.bShido(txtBShido.Text);
         }
 
@@ -571,7 +582,7 @@ namespace WindowsFormsApplication1
             {
                 grb02.BackColor = colorDlg.Color;
                 //btnBOsae.BackColor = colorDlg.Color;
-                formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
+                //formPlacarArb.placarColor(grb01.BackColor, grb02.BackColor);
                 formPlacarPub.placarColor(grb01.BackColor, grb02.BackColor);
 
             }

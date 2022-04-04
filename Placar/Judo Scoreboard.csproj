@@ -144,7 +144,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AYJudo.png" />
     <Content Include="Assets\gong.wav" />
+    <Content Include="Assets\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
