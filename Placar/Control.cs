@@ -71,8 +71,6 @@ namespace WindowsFormsApplication1
                 txtBWazari.Text = "0";
                 txtBShido.Text = "0";
 
-                txtArea.Text = "";
-
                 if (GS)
                 {
                     GS = !GS;
